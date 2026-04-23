@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iran Conflict: Financial System Implications for Australia — Scenario Analysis</title>
+<title>Iran Conflict: Financial System Implications for Australia — Updated Scenario Analysis (23 April 2026)</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -42,6 +42,11 @@
     display: inline-block; background: rgba(37,99,235,0.25); color: #93C5FD;
     font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
     padding: 5px 14px; border-radius: 4px; margin-bottom: 18px;
+  }
+  .hero .update-tag {
+    display: inline-block; background: rgba(220,38,38,0.35); color: #FCA5A5;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 4px; margin-bottom: 18px; margin-left: 10px;
   }
   .hero h1 { font-size: 30px; font-weight: 800; line-height: 1.25; margin-bottom: 12px; }
   .hero .subtitle { font-size: 15px; color: rgba(255,255,255,0.72); max-width: 700px; }
@@ -87,6 +92,12 @@
     font-size: 11px; color: var(--gray-500); margin-top: 4px;
     text-transform: uppercase; letter-spacing: 0.5px;
   }
+  .stat-box .delta {
+    font-size: 11px; margin-top: 2px; font-weight: 600;
+  }
+  .delta-up { color: var(--red); }
+  .delta-down { color: var(--green); }
+  .delta-neutral { color: var(--gray-500); }
 
   /* ── SCENARIO STRIP ── */
   .scenario-strip {
@@ -97,6 +108,7 @@
   .sc-col { padding: 20px 16px; color: #fff; }
   .sc-col h4 { color: #fff; margin: 0 0 4px; font-size: 14px; }
   .sc-col .prob { font-size: 28px; font-weight: 800; }
+  .sc-col .prob-change { font-size: 11px; opacity: 0.85; }
   .sc-col .desc { font-size: 12px; opacity: 0.85; margin-top: 4px; }
   .sc-a { background: linear-gradient(135deg, #059669, #10B981); }
   .sc-b { background: linear-gradient(135deg, #2563EB, #3B82F6); }
@@ -170,6 +182,7 @@
   .badge-business { background: #FFF7ED; color: var(--orange); }
   .badge-consumer { background: #F5F3FF; color: var(--purple); }
   .badge-all { background: #EFF6FF; color: var(--blue); }
+  .badge-update { background: #FEF2F2; color: var(--red); }
 
   /* ── IMPACT ARROW ── */
   .impact-list { list-style: none; padding: 0; }
@@ -192,25 +205,100 @@
   .heat-med { background: #FEF3C7 !important; }
   .heat-high { background: #FED7AA !important; }
   .heat-critical { background: #FECACA !important; }
+
+  /* ── UPDATE BANNER ── */
+  .update-banner {
+    background: linear-gradient(90deg, #DC2626 0%, #EA580C 100%);
+    color: #fff; padding: 12px 28px; text-align: center; font-size: 13px;
+    font-weight: 600; letter-spacing: 0.5px;
+  }
+  .update-banner a { color: #FCD34D; text-decoration: underline; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 28px; margin: 20px 0; }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 2px; background: var(--gray-300);
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 16px; font-size: 14px; line-height: 1.5;
+  }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -24px; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--blue); border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--blue);
+  }
+  .timeline-item.tl-red::before { background: var(--red); box-shadow: 0 0 0 2px var(--red); }
+  .timeline-item.tl-green::before { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
+  .timeline-item.tl-orange::before { background: var(--orange); box-shadow: 0 0 0 2px var(--orange); }
+  .timeline-date { font-weight: 700; color: var(--navy); }
 </style>
 </head>
 <body>
+
+<!-- ═══════ UPDATE BANNER ═══════ -->
+<div class="update-banner">
+  UPDATE: This is the revised analysis dated 23 April 2026. Original briefing was prepared 8 March 2026. All data, scenarios, and probabilities have been updated to reflect developments through 22 April 2026.
+</div>
 
 <!-- ═══════ HERO ═══════ -->
 <div class="hero">
   <div class="hero-inner">
     <div class="tag">Financial System Analysis &mdash; Scenario Briefing</div>
+    <div class="update-tag">Updated 23 April 2026</div>
     <h1>Iran Conflict &amp; Strait of Hormuz Crisis:<br>Financial System Implications for Australia</h1>
     <p class="subtitle">
-      A scenario-based analysis of the transmission channels through which the ongoing Iran conflict
-      may affect Australia's financial system, covering markets, credit conditions, insurance,
+      An updated scenario-based analysis of the transmission channels through which the ongoing Iran conflict
+      is affecting Australia's financial system, covering markets, credit conditions, insurance,
       superannuation, and private markets. Prepared for a financial regulatory audience.
     </p>
-    <p class="meta">Prepared 8 March 2026 &nbsp;|&nbsp; Based on open-source intelligence, analyst forecasts, and regulatory publications</p>
+    <p class="meta">Updated 23 April 2026 &nbsp;|&nbsp; Original briefing: 8 March 2026 &nbsp;|&nbsp; Based on open-source intelligence, analyst forecasts, and regulatory publications</p>
   </div>
 </div>
 
 <div class="container">
+
+<!-- ═══════ WHAT HAS CHANGED ═══════ -->
+<div class="card card-accent-red" style="margin-top: 28px;">
+  <h3 style="color: var(--red); margin-top: 0;">What Has Changed Since 8 March 2026</h3>
+  <p>The original analysis was prepared one week after <em>Operation Epic Fury</em>. Seven weeks later, the situation has defied clean scenario categorisation. Reality has tracked an oscillating path between Scenarios B and C &mdash; periods of hope (ceasefire, brief Hormuz reopening) followed by reversals (re-closure, ship seizures). The IEA has called this <strong>&ldquo;the largest supply disruption in the history of the global oil market.&rdquo;</strong></p>
+
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="value" style="color:var(--red);">$101.73</div>
+      <div class="label">Brent Crude (22 Apr)</div>
+      <div class="delta delta-up">+55% from pre-conflict</div>
+    </div>
+    <div class="stat-box">
+      <div class="value" style="color:var(--navy);">4.10%</div>
+      <div class="label">RBA Cash Rate</div>
+      <div class="delta delta-up">+25bp since original</div>
+    </div>
+    <div class="stat-box">
+      <div class="value" style="color:var(--gold);">$4,712</div>
+      <div class="label">Gold (US$/oz)</div>
+      <div class="delta delta-up">Record territory</div>
+    </div>
+    <div class="stat-box">
+      <div class="value" style="color:var(--red);">~8 wks</div>
+      <div class="label">Hormuz Effectively Closed</div>
+      <div class="delta delta-up">Ceasefire partially collapsed</div>
+    </div>
+    <div class="stat-box">
+      <div class="value" style="color:var(--navy);">18.92</div>
+      <div class="label">VIX (22 Apr)</div>
+      <div class="delta delta-neutral">Lower than expected</div>
+    </div>
+    <div class="stat-box">
+      <div class="value" style="color:var(--red);">5.4%</div>
+      <div class="label">CBA Headline CPI Fcast (mid-2026)</div>
+      <div class="delta delta-up">Stagflation risk rising</div>
+    </div>
+  </div>
+
+  <p style="font-size: 14px;"><strong>Key developments:</strong> The RBA has hiked twice (Feb +25bp to 3.85%, Mar +25bp to 4.10%), then held in April. Oil surged to ~$120/bbl at peak before falling to $91 on a brief Hormuz reopening (17 April), then rebounding to $101+ after Iran re-closed the strait (18 April) and seized two ships (22 April). The government halved fuel excise on 1 April. Private credit is in industry-wide stress with redemption gates across major platforms. The ASX 200 fell as much as 10.2% before recovering to a 8,900&ndash;9,000 consolidation range.</p>
+</div>
 
 <!-- TOC -->
 <div class="toc">
@@ -233,45 +321,100 @@
 <section id="context">
   <h2>1. Macroeconomic Context &amp; Scenario Framework</h2>
 
-  <p>On 28 February 2026, the US and Israel launched coordinated strikes on Iran (<em>Operation Epic Fury</em>), resulting in the death of Supreme Leader Khamenei and triggering Iranian retaliation across the Gulf. The IRGC declared the Strait of Hormuz closed on 2 March. An insurance-driven shutdown, rather than a conventional naval blockade, has reduced tanker transit by approximately 90%. Major shipping lines have suspended Hormuz operations and rerouted via the Cape of Good Hope.</p>
+  <p>On 28 February 2026, the US and Israel launched coordinated strikes on Iran (<em>Operation Epic Fury</em>), resulting in the death of Supreme Leader Khamenei and triggering Iranian retaliation across the Gulf. The IRGC declared the Strait of Hormuz closed on 2 March. An insurance-driven shutdown, rather than a conventional naval blockade, reduced tanker transit by approximately 90%. Major shipping lines suspended Hormuz operations and rerouted via the Cape of Good Hope.</p>
 
-  <p>The analysis that follows is structured around four scenarios for the period March&ndash;May 2026, synthesising published forecasts from Goldman Sachs, Westpac, CBA, Oxford Economics, UBS, and Allianz Research. These scenarios are descriptive and analytical; they do not imply any specific policy response.</p>
+  <p>Seven weeks later, the situation has evolved through a turbulent and unpredictable trajectory. What follows is first a timeline of key developments since the original briefing, then an updated scenario framework for the period ahead.</p>
+
+  <div class="card card-accent-top" style="margin-top: 20px;">
+    <h3 style="margin-top: 0;">Conflict Timeline: 8 March &ndash; 22 April 2026</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-date">11 March:</span> UN Security Council passed resolution demanding end of attacks on shipping and reaffirming the right of vessels to traverse the Strait of Hormuz.
+      </div>
+      <div class="timeline-item tl-red">
+        <span class="timeline-date">Late March:</span> Iran launched hundreds of drones and ballistic missiles at Israel and US bases in Gulf states (Bahrain, Jordan, Kuwait, Qatar, Saudi Arabia, UAE). March saw one of the largest monthly oil price jumps on record: Brent +51%.
+      </div>
+      <div class="timeline-item tl-orange">
+        <span class="timeline-date">1 April:</span> Australian government halved fuel excise &mdash; 50% cut (26.3c/L) for 3 months until 30 June, plus additional 10.9% via state deal. Total reduction: 32c/L. Cost: $2.55 billion.
+      </div>
+      <div class="timeline-item tl-red">
+        <span class="timeline-date">5 April:</span> Trump threatened to attack Iran&rsquo;s power plants and bridges if Hormuz not reopened.
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">6 April:</span> Indirect talks in Islamabad led to 45-day ceasefire proposal. Iran declined.
+      </div>
+      <div class="timeline-item tl-green">
+        <span class="timeline-date">7&ndash;8 April:</span> Trump announced 2-week ceasefire on Truth Social. Iran agreed. Iran to reopen Strait of Hormuz.
+      </div>
+      <div class="timeline-item tl-orange">
+        <span class="timeline-date">9&ndash;16 April:</span> Ships still not transiting Hormuz despite ceasefire. Insurance and security concerns remained.
+      </div>
+      <div class="timeline-item tl-green">
+        <span class="timeline-date">17 April:</span> Iran FM Araghchi declared Hormuz open to all shipping. Brent dropped 11%, fell below $91. ~20 ships transited on Saturday. RBA held cash rate at 4.10%. But confusion: ships required to coordinate with Iranian forces; ships with cargo linked to &ldquo;hostile nations&rdquo; not permitted.
+      </div>
+      <div class="timeline-item tl-red">
+        <span class="timeline-date">18 April:</span> Iran reversed course, re-closed Hormuz, stating US blockade of Iranian ports violated ceasefire. Traffic halted after attacks on commercial vessels.
+      </div>
+      <div class="timeline-item tl-red">
+        <span class="timeline-date">20 April:</span> Oil prices spiked again. Brent back above $95 on Hormuz standoff.
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">21 April:</span> Trump extended ceasefire, said it would remain in place until Iran submits &ldquo;unified proposal&rdquo; to end conflict.
+      </div>
+      <div class="timeline-item tl-red">
+        <span class="timeline-date">22 April:</span> Iran seized two ships (MSC Francesca and Epaminondas) in Hormuz. Iran&rsquo;s parliament declared it would not reopen Hormuz while US blockade remains. Brent at $101.73 (+3.3%). Trump gave Iran 3&ndash;5 days to engage or resume attacks.
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-accent-orange">
+    <h3 style="margin-top: 0;">What Actually Happened vs. Original Scenarios</h3>
+    <p>Reality has tracked an <strong>oscillating B/C path</strong>. The Strait has been effectively closed for nearly 8 weeks. A ceasefire was agreed but has partially collapsed. Oil hit $120 at peak and is now ~$101. There is no Scenario D-level multi-theatre expansion, but Scenario A (swift resolution) clearly did not materialise.</p>
+    <p>The situation is best described as periods of hope (ceasefire announcement, brief reopening on 17 April) followed by reversals (re-closure on 18 April, ship seizures on 22 April). This &ldquo;sawtooth&rdquo; pattern creates its own form of market stress &mdash; uncertainty about the direction of travel is arguably more damaging to investment and risk management than a clear, sustained escalation.</p>
+  </div>
+
+  <h3>Updated Scenario Framework (forward-looking, next 4&ndash;6 weeks from 23 April)</h3>
 
   <!-- Scenario strip -->
   <div class="scenario-strip">
     <div class="sc-col sc-a">
-      <h4>A: Swift Resolution</h4>
-      <div class="prob">30%</div>
-      <div class="desc">Ceasefire in 2&ndash;3 weeks. Hormuz reopens within a month. Brent $76&ndash;85.</div>
+      <h4>A: Sustained Resolution</h4>
+      <div class="prob">15%</div>
+      <div class="prob-change">(was 30%)</div>
+      <div class="desc">Ceasefire holds. Hormuz actually reopens. Oil returns to $80s.</div>
     </div>
     <div class="sc-col sc-b">
-      <h4>B: Protracted Disruption</h4>
-      <div class="prob">35%</div>
-      <div class="desc">Closure persists 4&ndash;6 weeks. Partial rerouting. Brent $95&ndash;110.</div>
+      <h4>B: Grinding Stalemate</h4>
+      <div class="prob">40%</div>
+      <div class="prob-change">(was 35%)</div>
+      <div class="desc">Status quo continues. Oil $90&ndash;110. Periodic ceasefire extensions and breakdowns.</div>
     </div>
     <div class="sc-col sc-c">
-      <h4>C: Escalation</h4>
-      <div class="prob">25%</div>
-      <div class="desc">Hard blockade, 2+ months. Mines/missiles deployed. Brent $110&ndash;150.</div>
+      <h4>C: Further Escalation</h4>
+      <div class="prob">30%</div>
+      <div class="prob-change">(was 25%)</div>
+      <div class="desc">Ceasefire collapses. Hard blockade with mines/missiles. Brent $110&ndash;140.</div>
     </div>
     <div class="sc-col sc-d">
-      <h4>D: Conflagration</h4>
-      <div class="prob">10%</div>
-      <div class="desc">Multi-theatre conflict. Hormuz + Bab el-Mandeb closed. Brent $150&ndash;200+.</div>
+      <h4>D: Regional Conflagration</h4>
+      <div class="prob">15%</div>
+      <div class="prob-change">(was 10%)</div>
+      <div class="desc">Multi-theatre: Israel-Lebanon, Houthis. Brent $140&ndash;200+.</div>
     </div>
   </div>
 
   <div class="stat-grid">
     <div class="stat-box">
       <div class="value" style="color:var(--red);">~90%</div>
-      <div class="label">Drop in Hormuz Traffic</div>
+      <div class="label">Hormuz Traffic Reduction</div>
     </div>
     <div class="stat-box">
-      <div class="value" style="color:var(--navy);">$83/bbl</div>
-      <div class="label">Brent Crude (8 Mar)</div>
+      <div class="value" style="color:var(--red);">$101.73</div>
+      <div class="label">Brent Crude (22 Apr)</div>
     </div>
     <div class="stat-box">
-      <div class="value" style="color:var(--navy);">3.85%</div>
+      <div class="value" style="color:var(--navy);">4.10%</div>
       <div class="label">RBA Cash Rate</div>
     </div>
     <div class="stat-box">
@@ -281,7 +424,15 @@
   </div>
 
   <div class="callout">
-    <strong>Background condition:</strong> Australia enters this crisis with the RBA cash rate at 3.85% following a February hike, household debt at 190% of income, mortgage stress at 24.5% of holders, and APRA having just introduced DTI limits from February 2026. The financial system is well-capitalised but vulnerable to a second inflation shock layered onto existing cost-of-living pressures.
+    <strong>Background condition (updated):</strong> Australia now faces a cash rate of 4.10% after two consecutive hikes (Feb and Mar), household debt still at 190% of income, and consumer inflation expectations at 6.9%. The government&rsquo;s fuel excise cut (1 April) has provided temporary relief of ~30c/L at the pump, but CBA forecasts headline CPI rising to 5.4% by mid-2026 and Deloitte projects GDP growth cut from 2.4% to 1.9% for 2026&ndash;27. RBA Deputy Governor Hauser has warned of a stagflation &ldquo;nightmare.&rdquo; Stagflation is now openly discussed as a realistic risk.
+  </div>
+
+  <!-- Oil Price Trajectory Chart -->
+  <div class="chart-wrap">
+    <h3>Brent Crude Oil: Actual Price Trajectory (Feb&ndash;Apr 2026)</h3>
+    <div class="chart-container" style="max-height: 320px;">
+      <canvas id="oilTrajectoryChart"></canvas>
+    </div>
   </div>
 </section>
 
@@ -290,11 +441,13 @@
   <h2>2. Equity Markets</h2>
 
   <div class="card card-accent-top">
-    <h3>Global Equity Response</h3>
-    <p>Global equities sold off in the first week of the conflict, with the S&P 500 falling 0.7% and the Dow dropping over 800 points by 5 March. European bourses fell 1&ndash;2%, reflecting their direct energy cost exposure. The VIX spiked as implied volatility repriced across asset classes.</p>
+    <span class="channel-badge badge-update">Updated with actual data</span>
+    <h3>ASX 200: From Drawdown to Tentative Recovery</h3>
+    <p>The ASX 200 experienced a peak drawdown of <strong>940 points (10.2%)</strong>, falling to a low of 8,262 on 23 March as the full implications of the Hormuz closure became apparent. This substantially exceeded the original Scenario B estimate of &minus;3% to &minus;6%.</p>
 
-    <h3>ASX 200: Bifurcated Impact</h3>
-    <p>The ASX 200 has experienced material sector rotation rather than a uniform drawdown. The index fell 1.3&ndash;1.4% in aggregate, but this masks extreme divergence between winners and losers. Energy producers (Woodside +30% YTD, Santos +25%) have surged, while consumer discretionary, transport, and travel stocks have been hit. This bifurcation creates portfolio-level risk for concentrated holdings and benchmarked funds.</p>
+    <p>Since late March, the index has rallied back to the <strong>8,900&ndash;9,000 consolidation range</strong> by mid-April, supported by the ceasefire announcement, the government&rsquo;s fuel excise cut, and the RBA&rsquo;s decision to hold in April. The recovery has been led by defensive sectors (healthcare, consumer staples) rather than energy, which has retreated ~8% from its early April peak as investors rotated away.</p>
+
+    <p>Energy stocks (Woodside, Santos) surged dramatically in the initial weeks of the crisis but have since partially unwound gains. The sector bifurcation that was merely emerging in the original briefing has played out as forecast, then begun to partially reverse as commodity prices pulled back from their peaks.</p>
 
     <div class="chart-container" style="max-height:320px;">
       <canvas id="sectorChart"></canvas>
@@ -302,50 +455,57 @@
   </div>
 
   <div class="card">
-    <h3>Scenario Impact: Australian Equities</h3>
+    <h3>Scenario Impact: Australian Equities (Updated)</h3>
     <table>
       <thead>
         <tr>
           <th style="width:28%;">Metric</th>
-          <th class="sc-a-h">A: Swift</th>
-          <th class="sc-b-h">B: Protracted</th>
-          <th class="sc-c-h">C: Escalation</th>
-          <th class="sc-d-h">D: Conflagration</th>
+          <th class="sc-a-h">A: Resolution (15%)</th>
+          <th class="sc-b-h">B: Stalemate (40%)</th>
+          <th class="sc-c-h">C: Escalation (30%)</th>
+          <th class="sc-d-h">D: Conflagration (15%)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>ASX 200 trajectory</strong></td>
-          <td>Recovery to pre-conflict levels within 4&ndash;6 weeks</td>
-          <td>&minus;3% to &minus;6% from pre-conflict; volatile trading range</td>
-          <td>&minus;8% to &minus;15%; bear market risk for non-energy sectors</td>
-          <td>&minus;15% to &minus;25%; broad-based sell-off</td>
+          <td>Rally to 9,200+ as oil falls</td>
+          <td>Range-bound 8,700&ndash;9,100; sector rotation continues</td>
+          <td>Retest March lows; 8,000&ndash;8,400 range</td>
+          <td>Below 8,000; broad-based sell-off</td>
         </tr>
         <tr>
           <td><strong>Energy sector</strong></td>
-          <td>Moderate gains unwind as oil retreats</td>
-          <td>Sustained outperformance; Woodside, Santos remain elevated</td>
-          <td>Windfall profits; possible government intervention discussion</td>
-          <td>Revenue surge but demand destruction begins to offset</td>
+          <td>Gives back remaining gains; Woodside to $38&ndash;40</td>
+          <td>Holds elevated levels but further rotation away</td>
+          <td>Second surge; windfall profit discussion intensifies</td>
+          <td>Revenue surge but demand destruction caps upside</td>
         </tr>
         <tr>
           <td><strong>Consumer discretionary</strong></td>
-          <td>Transient weakness; quick rebound</td>
-          <td>Meaningful drag from fuel/cost-of-living pressure</td>
-          <td>Significant earnings downgrades; retail spending contraction</td>
-          <td>Severe contraction; recession-level consumer retrenchment</td>
+          <td>Bounces on excise cut + oil relief</td>
+          <td>Continued drag; fuel costs offset excise benefit</td>
+          <td>Significant earnings downgrades; retail contraction</td>
+          <td>Severe contraction; recession-level retrenchment</td>
         </tr>
         <tr>
           <td><strong>Financials (banks)</strong></td>
-          <td>Stable; NIM benefits from rate hold</td>
-          <td>Mixed; higher rates support NIM, credit quality concerns emerge</td>
-          <td>Credit quality deterioration; provisioning increases; loan book stress</td>
-          <td>Significant provisioning; share price pressure; potential capital raises</td>
+          <td>Stable; NIM benefits from 4.10% rate</td>
+          <td>Mixed; provisioning tick up in transport/hospitality exposures</td>
+          <td>Credit quality deterioration; provisioning increases materially</td>
+          <td>Significant provisioning; share price pressure</td>
         </tr>
         <tr>
-          <td><strong>VIX / volatility</strong></td>
-          <td>Returns to ~15 range</td>
-          <td>Elevated 20&ndash;25 range</td>
+          <td><strong>Defensive sectors</strong></td>
+          <td>Modest outperformance unwinds</td>
+          <td>Continue to provide ballast; healthcare, staples favoured</td>
+          <td>Strong relative performance; flight to quality accelerates</td>
+          <td>Only pockets of resilience</td>
+        </tr>
+        <tr>
+          <td><strong>VIX</strong></td>
+          <td>Below 15</td>
+          <td>18&ndash;22 range (current: 18.92)</td>
           <td>Sustained 25&ndash;35</td>
           <td>Crisis-level &gt;35</td>
         </tr>
@@ -354,7 +514,7 @@
   </div>
 
   <div class="callout">
-    <strong>Financial stability implication:</strong> The bifurcation in equity performance creates basis risk for leveraged positions and structured products linked to broad indices. Funds with concentrated exposure to non-energy sectors face underperformance pressure that could trigger margin calls or redemptions, particularly in the leveraged ETF and hedge fund space.
+    <strong>Financial stability implication:</strong> The 10.2% drawdown and subsequent recovery validates the view that the ASX can absorb a Scenario B shock without systemic consequences. However, the VIX at 18.92 &mdash; lower than expected given the severity of the disruption &mdash; may indicate complacency. If the situation escalates from B to C, markets may be under-hedged for the downside, potentially leading to a sharp, disorderly repricing.
   </div>
 </section>
 
@@ -364,64 +524,65 @@
 
   <div class="two-col">
     <div class="card card-accent-top">
+      <span class="channel-badge badge-update">Updated with actual data</span>
       <h3>Government Bonds</h3>
-      <p>Government bonds have defied the traditional safe-haven playbook. US Treasuries and Australian Government Bonds (AGBs) initially sold off as the oil surge reignited inflation expectations. The 10-year AGB yield rose as traders priced in a higher-for-longer RBA path.</p>
-      <p>This is a critical departure from prior geopolitical shocks: bonds are not providing portfolio insurance. The stagflationary nature of the shock (simultaneous upward pressure on inflation and downward pressure on growth) creates a poisonous dynamic for fixed income, as neither a flight-to-safety rally nor a growth-slowdown rally can materialise cleanly.</p>
+      <p>Government bonds have continued to defy the traditional safe-haven playbook, as forecast in the original briefing. The US 10-year Treasury yield has risen 5bp to <strong>4.368%</strong>, reflecting persistent inflation expectations rather than a flight to safety.</p>
+      <p>The stagflationary nature of the shock &mdash; simultaneous upward pressure on inflation and downward pressure on growth &mdash; has continued to create a poisonous dynamic for fixed income. With the RBA at 4.10% and CBA forecasting headline CPI at 5.4% by mid-2026, the bond market faces the same dilemma identified in the original briefing but with real data now confirming the mechanism.</p>
     </div>
     <div class="card card-accent-red">
-      <h3>Corporate Debt &amp; Issuance</h3>
-      <p>The corporate bond market has seized. Bloomberg reported that new bond issuance in Europe was put on hold entirely in the first week of the conflict. The iTraxx Europe Crossover index (sub-investment-grade CDS) jumped ~11bps to 270bps.</p>
-      <p>In Australia, corporate issuance windows have narrowed. Spread widening is most pronounced in transport, logistics, and consumer-facing sectors. Energy-sector credits, conversely, have tightened as improved cash-flow outlooks reduce perceived default risk.</p>
-      <p>If the disruption persists (Scenarios B&ndash;D), corporates approaching refinancing windows face materially higher funding costs. This is especially significant for BBB-rated issuers near the investment-grade boundary, where a downgrade could trigger forced selling by mandated funds.</p>
+      <h3>Corporate Credit &amp; Spreads</h3>
+      <p>Investment-grade credit spreads have widened from 0.83 percentage points and continue to trend higher. Morningstar noted the widening <strong>&ldquo;could continue if oil prices stay elevated,&rdquo;</strong> and under a prolonged scenario, IG spreads could reach 1.2pp.</p>
+      <p>High-yield spreads have moved to <strong>3.46 percentage points</strong> and could widen to 4.5&ndash;5.0pp under a sustained disruption. Global bond issuance has been materially disrupted.</p>
+      <p>The April 1 reinsurance renewal and the ceasefire volatility have added a new dimension: investors are struggling to price risk for assets where the underlying geopolitical trajectory oscillates week-to-week. This uncertainty premium may persist even under Scenario A, as markets learn to price &ldquo;ceasefire fragility.&rdquo;</p>
     </div>
   </div>
 
   <div class="chart-wrap">
-    <h3>Illustrative Credit Spread Trajectories: Australian Investment-Grade vs. Sub-IG</h3>
+    <h3>Credit Spread Trajectories: Actual and Projected (Updated)</h3>
     <div class="chart-container">
       <canvas id="creditSpreadChart"></canvas>
     </div>
   </div>
 
   <div class="card">
-    <h3>Scenario Impact: Debt Markets</h3>
+    <h3>Scenario Impact: Debt Markets (Updated)</h3>
     <table>
       <thead>
         <tr>
           <th style="width:28%;">Metric</th>
-          <th class="sc-a-h">A: Swift</th>
-          <th class="sc-b-h">B: Protracted</th>
-          <th class="sc-c-h">C: Escalation</th>
-          <th class="sc-d-h">D: Conflagration</th>
+          <th class="sc-a-h">A: Resolution (15%)</th>
+          <th class="sc-b-h">B: Stalemate (40%)</th>
+          <th class="sc-c-h">C: Escalation (30%)</th>
+          <th class="sc-d-h">D: Conflagration (15%)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>10Y AGB yield</strong></td>
-          <td>Drifts back to 4.1&ndash;4.2%</td>
-          <td>Elevated 4.3&ndash;4.6%</td>
-          <td>Volatile; 4.5&ndash;5.0%</td>
-          <td>Extreme volatility; flight-to-safety may finally trigger rally</td>
+          <td><strong>US 10Y Treasury</strong></td>
+          <td>Drifts to 4.2&ndash;4.3%</td>
+          <td>Range 4.3&ndash;4.5%</td>
+          <td>Volatile 4.4&ndash;4.8%</td>
+          <td>Extreme volatility; eventual flight to safety</td>
         </tr>
         <tr>
-          <td><strong>IG credit spreads (Aus)</strong></td>
-          <td>+5&ndash;10bps; quick reversion</td>
-          <td>+15&ndash;30bps; sector dispersion</td>
-          <td>+40&ndash;70bps; issuance freeze</td>
-          <td>+80&ndash;150bps; distressed levels for weaker credits</td>
+          <td><strong>IG credit spreads</strong></td>
+          <td>Tighten from 0.83pp toward 0.75pp</td>
+          <td>Widen toward 1.0&ndash;1.2pp</td>
+          <td>1.2&ndash;1.6pp; issuance freeze</td>
+          <td>1.8pp+; distressed levels</td>
         </tr>
         <tr>
-          <td><strong>Sub-IG spreads</strong></td>
-          <td>+15&ndash;25bps</td>
-          <td>+40&ndash;80bps</td>
-          <td>+100&ndash;200bps; rising defaults</td>
-          <td>+250bps+; market dislocation</td>
+          <td><strong>HY spreads</strong></td>
+          <td>Tighten from 3.46pp</td>
+          <td>4.0&ndash;4.5pp</td>
+          <td>4.5&ndash;5.5pp; rising defaults</td>
+          <td>6.0pp+; market dislocation</td>
         </tr>
         <tr>
           <td><strong>Issuance conditions</strong></td>
-          <td>Reopens within weeks</td>
-          <td>Selective reopening; flight to quality</td>
-          <td>Effectively closed for all but highest quality</td>
+          <td>Reopens; catch-up issuance</td>
+          <td>Selective; flight to quality</td>
+          <td>Effectively closed for sub-IG</td>
           <td>Frozen; emergency facility usage</td>
         </tr>
       </tbody>
@@ -434,9 +595,19 @@
   <h2>4. Derivatives &amp; Commodities Markets</h2>
 
   <div class="card card-accent-orange">
-    <h3>Oil Derivatives: Volatility Structure</h3>
-    <p>The oil derivatives market is signalling that traders currently view the shock as short-lived. Brent 30-day at-the-money implied volatility jumped 17.5 points to 68%, but 60-day and 90-day tenors rose only 5.9 and 2.8 points respectively. This steep term structure inversion suggests the market is pricing a spike-and-revert pattern rather than a structural shift.</p>
-    <p>This market-implied view broadly supports Scenario A or an early resolution within Scenario B. However, if the situation persists and the term structure flattens or inverts further along the curve, it would signal that markets are repricing toward Scenarios C/D — with significant implications for hedging costs across the real economy.</p>
+    <span class="channel-badge badge-update">Updated with actual data</span>
+    <h3>Oil Market: The Defining Commodity Story</h3>
+    <p>The IEA has characterised this as <strong>&ldquo;the largest supply disruption in the history of the global oil market,&rdquo;</strong> with demand destruction estimated at 4&ndash;5 million barrels per day (approximately 5% of global supply). Oil&rsquo;s trajectory has been extraordinary:</p>
+
+    <ul class="impact-list">
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Pre-conflict:</strong> Brent at ~$73/bbl</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Peak:</strong> Nearly $120/bbl &mdash; a 55% surge from pre-conflict levels</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>March:</strong> +51% &mdash; one of the largest monthly oil price jumps on record</span></li>
+      <li><span class="arrow arrow-down">&#x25BC;</span><span><strong>17 April:</strong> Brent dropped 11% to below $91 on Hormuz reopening announcement</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>20&ndash;22 April:</strong> Back above $95, then $101.73 on 22 April (+3.3%) after re-closure and ship seizures</span></li>
+    </ul>
+
+    <p>The volatility pattern has shifted from the original briefing. The steep term structure inversion observed at 8 March (suggesting a spike-and-revert pattern) has <strong>flattened</strong>, indicating that markets are now pricing a more persistent disruption. This is consistent with the shift from Scenario A expectations toward B/C.</p>
 
     <div class="chart-container" style="max-height:280px; margin-top:16px;">
       <canvas id="volTermChart"></canvas>
@@ -444,19 +615,18 @@
   </div>
 
   <div class="card">
-    <h3>Margin Call &amp; Collateral Dynamics</h3>
-    <p>The surge in energy prices and volatility has triggered large margin calls across commodity futures and OTC derivatives markets. VLCC tanker rates hitting an all-time high of $423,736/day (+94% in a single day) illustrates the magnitude of the repricing. Market participants with short energy exposure or long freight derivatives face significant margin pressure.</p>
-    <p>For Australian entities, the key transmission channels are:</p>
+    <h3>Margin Call &amp; Collateral Dynamics (Updated)</h3>
+    <p>The sustained elevation in energy prices has produced cumulative margin call pressures far exceeding initial estimates. The 17&ndash;18 April whipsaw (11% drop followed by immediate reversal) was particularly damaging &mdash; participants on both sides of the trade were caught, creating margin pressure in both directions within 48 hours.</p>
     <ul class="impact-list">
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Energy hedging by corporates:</strong> Airlines (Qantas, Virgin), logistics firms, and large fuel consumers face mark-to-market losses on existing hedges or inability to roll hedges at viable prices.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Bank trading books:</strong> Australian banks with commodity derivatives exposure face increased VaR and capital requirements. CCP margin requirements have escalated.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Super fund derivative overlays:</strong> Funds using futures-based commodity exposure or currency hedges face margin calls requiring liquidity buffers.</span></li>
-      <li><span class="arrow arrow-neutral">&#x25CF;</span><span><strong>Producer hedging windfall:</strong> Australian LNG and oil producers who sold forward are now deeply in-the-money, releasing collateral. Oil producers are locking in 2026 hedges at elevated prices.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Energy hedging by corporates:</strong> Airlines and logistics firms face multi-billion-dollar mark-to-market losses on existing hedge books. Some have been forced to reduce hedge ratios, leaving them more exposed to further price swings.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Bank trading books:</strong> VaR breaches and capital requirement escalations have been reported across multiple global banks.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Gold as safe haven:</strong> Gold has surged to US$4,712/oz, confirming its traditional safe-haven role. However, the 2.2% single-day drop on 22 April suggests even gold is subject to liquidity-driven selling.</span></li>
+      <li><span class="arrow arrow-neutral">&#x25CF;</span><span><strong>AUD/USD:</strong> Trading in the 0.70&ndash;0.71 range. The Australian dollar has been buffered by elevated commodity export prices (LNG, iron ore) offsetting risk-off pressure.</span></li>
     </ul>
   </div>
 
   <div class="callout-red callout">
-    <strong>Systemic risk note:</strong> In Scenarios C and D, the magnitude of margin calls could create a liquidity squeeze analogous to the March 2020 or September 2022 (UK LDI) episodes. CCP margin procyclicality — where rising volatility triggers rising margin requirements, forcing position liquidation that further increases volatility — is a well-documented amplification mechanism. ASIC and APRA's joint oversight of CCPs would need to monitor margin call cascades closely under these scenarios.
+    <strong>Systemic risk note (updated):</strong> The whipsaw dynamics of the ceasefire &mdash; sharp moves in both directions &mdash; are proving more operationally disruptive than a sustained move in one direction. CCP margin models calibrated for directional moves are less effective at handling this &ldquo;sawtooth&rdquo; pattern. The risk of a margin-call cascade remains elevated and may actually be higher under Scenario B (grinding stalemate with periodic false hope) than under a clean Scenario C escalation.
   </div>
 </section>
 
@@ -466,61 +636,90 @@
 
   <div class="card card-accent-orange">
     <span class="channel-badge badge-business">Business Credit</span>
+    <span class="channel-badge badge-update">Updated</span>
     <h3>Business Lending Conditions</h3>
-    <p>APRA's most recent data shows credit growing at around long-term average rates, with arrears and NPLs remaining low despite recent increases. The Iran conflict introduces a two-track dynamic for business credit:</p>
+    <p>The two-track dynamic forecast in the original briefing has materialised as expected. The RBA has now hiked twice (to 4.10%), and the fuel cost surge has compressed margins in exposed sectors. Deloitte has cut GDP growth forecasts from 2.4% to 1.9% for 2026&ndash;27.</p>
 
     <h4>Sectors facing credit tightening</h4>
     <ul class="impact-list">
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Transport &amp; logistics:</strong> Fuel cost surges directly compress margins. Smaller operators with thin capital buffers face cash-flow stress within weeks under Scenarios B&ndash;D.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Hospitality &amp; tourism:</strong> Consumer discretionary pullback + higher operating costs = margin compression. Already leveraged operators (post-COVID debt overhang) are most vulnerable.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Agriculture:</strong> Fuel and fertiliser cost surges (approximately one-third of global fertiliser transits Hormuz) squeeze farm margins, particularly for those without hedging.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Construction:</strong> Already stressed from higher rates; input cost escalation in energy-intensive materials compounds existing headwinds.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Transport &amp; logistics:</strong> Despite the fuel excise cut, net fuel costs remain significantly elevated. Smaller operators are experiencing cash-flow stress. The excise cut (32c/L total reduction) offsets roughly half the oil price increase at the pump.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Hospitality &amp; tourism:</strong> Consumer discretionary pullback + higher operating costs = margin compression. Stagflation fears are dampening consumer confidence.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Agriculture:</strong> Fuel and fertiliser cost surges (approximately one-third of global fertiliser transits Hormuz) continue to squeeze farm margins.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Construction:</strong> Already stressed from higher rates; input cost escalation in energy-intensive materials compounds existing headwinds. The rate at 4.10% is further tightening conditions.</span></li>
     </ul>
 
     <h4>Sectors with improving credit profiles</h4>
     <ul class="impact-list">
-      <li><span class="arrow arrow-down">&#x25BC;</span><span><strong>Energy producers:</strong> LNG, gas, coal, and oil producers see dramatically improved cash flows, debt-service coverage, and credit metrics.</span></li>
-      <li><span class="arrow arrow-down">&#x25BC;</span><span><strong>Mining services:</strong> Benefit from elevated commodity prices and increased exploration activity.</span></li>
+      <li><span class="arrow arrow-down">&#x25BC;</span><span><strong>Energy producers:</strong> LNG, gas, coal, and oil producers continue to see dramatically improved cash flows, with Brent at $101+ vs. ~$73 pre-conflict.</span></li>
+      <li><span class="arrow arrow-down">&#x25BC;</span><span><strong>Mining services:</strong> Benefit from elevated commodity prices. Gold miners in particular benefit from $4,712/oz gold.</span></li>
     </ul>
   </div>
 
   <div class="card card-accent-purple">
     <span class="channel-badge badge-consumer">Consumer Credit</span>
+    <span class="channel-badge badge-update">Updated</span>
     <h3>Household &amp; Consumer Credit Conditions</h3>
-    <p>Australian households enter this shock in a precarious position. Debt-to-income sits at 190%, mortgage stress already affects 24.5% of holders (1,187,000 people), and the RBA has just raised rates to 3.85%. The Iran conflict layers additional cost-of-living pressure on top of this existing strain.</p>
+    <p>The feared RBA-fuel cost interaction has materialised. The RBA has raised rates from 3.85% to 4.10%, and before the excise cut on 1 April, average unleaded was above $2.30/L nationally. The excise cut provided temporary relief &mdash; pump prices fell 30+ cents per litre &mdash; but the underlying oil price remains elevated.</p>
+
+    <p>Key data points since the original briefing:</p>
+    <ul class="impact-list">
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>RBA rate path:</strong> Feb: 3.85% (+25bp), Mar: 4.10% (+25bp, narrowly voted), Apr: held at 4.10%</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Inflation expectations:</strong> Hit 6.9% in Australia &mdash; well above the RBA&rsquo;s 2&ndash;3% target band</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Inflation forecasts:</strong> CBA: headline CPI to 5.4% by mid-2026, trimmed mean to peak at 3.8%. Deloitte: CPI peak at 4.9% in June 2026.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Stagflation risk:</strong> RBA Deputy Governor Hauser warned of stagflation &ldquo;nightmare&rdquo; &mdash; an extraordinary public statement from a senior central banker.</span></li>
+    </ul>
+
+    <h4>Government Intervention: Fuel Excise Cut</h4>
+    <div style="background:var(--gray-50); border-radius:8px; padding:16px; border:1px solid var(--gray-200); margin: 12px 0;">
+      <div class="stat-grid" style="margin: 0;">
+        <div class="stat-box">
+          <div class="value" style="color:var(--green);">32c/L</div>
+          <div class="label">Total Excise Reduction</div>
+        </div>
+        <div class="stat-box">
+          <div class="value" style="color:var(--navy);">$2.55B</div>
+          <div class="label">Fiscal Cost</div>
+        </div>
+        <div class="stat-box">
+          <div class="value" style="color:var(--navy);">30 Jun</div>
+          <div class="label">Excise Cut Expires</div>
+        </div>
+        <div class="stat-box">
+          <div class="value" style="color:var(--green);">Zero</div>
+          <div class="label">Heavy Vehicle Road User Charge</div>
+        </div>
+      </div>
+    </div>
 
     <div class="chart-container" style="max-height:300px; margin-top:12px;">
       <canvas id="mortgageStressChart"></canvas>
     </div>
 
-    <h4>Transmission to consumer credit quality</h4>
-    <p>Rising fuel costs act as a regressive consumption tax that disproportionately affects lower-income and outer-suburban households — precisely the cohort already most stretched on mortgage repayments. Under Scenario B, petrol prices rise 30&ndash;50c/L, adding roughly $30&ndash;50/week to an average household's fuel bill. For a household already at the margin of mortgage serviceability, this is material.</p>
-
-    <p>The key credit metrics to watch are:</p>
+    <h4>Consumer credit quality under updated scenarios</h4>
     <table>
       <thead>
         <tr>
           <th>Metric</th>
-          <th class="sc-a-h">A</th>
-          <th class="sc-b-h">B</th>
-          <th class="sc-c-h">C</th>
-          <th class="sc-d-h">D</th>
+          <th class="sc-a-h">A (15%)</th>
+          <th class="sc-b-h">B (40%)</th>
+          <th class="sc-c-h">C (30%)</th>
+          <th class="sc-d-h">D (15%)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Mortgage holders "at risk"</strong></td>
-          <td class="heat-low">24.5&ndash;25%</td>
-          <td class="heat-med">26&ndash;28%</td>
-          <td class="heat-high">29&ndash;32%</td>
-          <td class="heat-critical">33%+</td>
+          <td><strong>Mortgage holders &ldquo;at risk&rdquo;</strong></td>
+          <td class="heat-low">25&ndash;26%</td>
+          <td class="heat-med">27&ndash;29%</td>
+          <td class="heat-high">30&ndash;33%</td>
+          <td class="heat-critical">34%+</td>
         </tr>
         <tr>
           <td><strong>Mortgage 90+ day arrears</strong></td>
           <td class="heat-low">Stable</td>
-          <td class="heat-med">+10&ndash;20bps</td>
-          <td class="heat-high">+30&ndash;50bps</td>
-          <td class="heat-critical">+60&ndash;100bps</td>
+          <td class="heat-med">+10&ndash;25bps</td>
+          <td class="heat-high">+30&ndash;60bps</td>
+          <td class="heat-critical">+70&ndash;120bps</td>
         </tr>
         <tr>
           <td><strong>Credit card delinquencies</strong></td>
@@ -532,23 +731,23 @@
         <tr>
           <td><strong>Hardship applications</strong></td>
           <td class="heat-low">Baseline</td>
-          <td class="heat-med">+10&ndash;15%</td>
-          <td class="heat-high">+25&ndash;40%</td>
-          <td class="heat-critical">+50%+ (GFC-adjacent)</td>
+          <td class="heat-med">+10&ndash;20%</td>
+          <td class="heat-high">+30&ndash;50%</td>
+          <td class="heat-critical">+60%+ (GFC-adjacent)</td>
         </tr>
         <tr>
-          <td><strong>RBA rate impact</strong></td>
-          <td>Hold at 3.85%</td>
-          <td>Hold or +25bp</td>
-          <td>+25&ndash;50bp (stagflation risk)</td>
-          <td>Dilemma: cut for growth or hike for inflation</td>
+          <td><strong>RBA rate path</strong></td>
+          <td>Cut to 3.85% by H2</td>
+          <td>Hold at 4.10%; easing bias</td>
+          <td>Dilemma: hold or +25bp for inflation</td>
+          <td>Emergency cut despite inflation</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="callout-gold callout">
-    <strong>Compounding risk:</strong> If the RBA raises rates further in response to energy-driven inflation (as flagged by Governor Bullock), the consumer credit impact amplifies. Roy Morgan modelling shows a further 25bp hike to 4.10% would push mortgage stress from 24.5% to 27.2% of holders — an additional 130,000 households "at risk". This RBA-fuel cost interaction is the single most significant financial stability channel for Australian households.
+    <strong>Updated compounding risk:</strong> The original warning about RBA-fuel cost interaction has been validated. The RBA raised to 4.10% in March, and the original Roy Morgan estimate that this would push mortgage stress to 27.2% of holders appears to be tracking as projected. The fuel excise cut partially offsets the pump price impact, but expires on 30 June. If oil remains above $100 when the excise cut expires, households face a double hit: the return of full excise plus still-elevated crude prices. This &ldquo;excise cliff&rdquo; on 1 July is a critical date for consumer credit stress.
   </div>
 </section>
 
@@ -557,54 +756,56 @@
   <h2>6. Securitisation Markets</h2>
 
   <div class="card card-accent-top">
-    <h3>RMBS: The Central Vulnerability</h3>
-    <p>Residential mortgage-backed securities constitute approximately three-quarters of funding for Australian non-bank mortgage lenders. The RBA's securitisation dataset, which covers over $300 billion of outstanding RMBS, provides the regulator with granular loan-level data to monitor emerging stress.</p>
+    <span class="channel-badge badge-update">Updated with actual data</span>
+    <h3>RMBS: Better Than Feared</h3>
+    <p>The securitisation market has, to date, performed significantly better than the downside scenarios contemplated in the original briefing. Key developments:</p>
 
-    <p>Current arrears on marketed RMBS are broadly in line with bank mortgage arrears — elevated compared to recent lows but not high by historical or international standards. The Iran conflict threatens this stability through two channels:</p>
+    <ul class="impact-list">
+      <li><span class="arrow arrow-down">&#x25BC;</span><span><strong>Arrears declining:</strong> Non-bank housing arrears remain slightly below 1% (close to bank levels). Remarkably, the share of loans 3+ months in arrears has actually <em>declined</em> over the past year to near pre-pandemic levels.</span></li>
+      <li><span class="arrow arrow-down">&#x25BC;</span><span><strong>Issuance resilient:</strong> Firstmac priced a <strong>$2.4 billion RMBS deal in March</strong> &mdash; the largest in its history. Over 70% was bought by local investors, demonstrating continued domestic appetite for Australian RMBS.</span></li>
+      <li><span class="arrow arrow-neutral">&#x25CF;</span><span><strong>RBA assessment:</strong> The March 2026 Financial Stability Review found that risks from non-bank lenders are &ldquo;limited&rdquo; by their relatively small size.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Growth differential:</strong> Non-bank credit is growing faster than bank credit, a trend that warrants continued monitoring even though current arrears are benign.</span></li>
+    </ul>
 
-    <h4>Channel 1: Underlying collateral deterioration</h4>
-    <p>Rising mortgage stress (via fuel costs and potential rate rises) directly worsens the performance of the loan pools backing RMBS. Non-bank lenders, whose borrowers tend to have weaker credit profiles, are more exposed. Under Scenarios C/D, arrears could rise to levels that erode subordination in lower-rated tranches.</p>
-
-    <h4>Channel 2: Spread widening and issuance disruption</h4>
-    <p>Global risk-off sentiment and credit spread widening makes RMBS issuance more expensive. If primary issuance becomes unviable (Scenarios C/D), non-bank lenders face a funding squeeze — unable to originate new loans or refinance existing warehouse facilities. This can force portfolio sales at distressed prices or, in extreme cases, lender failure.</p>
+    <p>This is broadly consistent with an early Scenario B outcome &mdash; stress is present but manageable, and the Australian RMBS market&rsquo;s structural features (high subordination levels, strong servicer standards, RBA oversight) are functioning as intended.</p>
 
     <table>
       <thead>
         <tr>
           <th>RMBS Metric</th>
-          <th class="sc-a-h">A</th>
-          <th class="sc-b-h">B</th>
-          <th class="sc-c-h">C</th>
-          <th class="sc-d-h">D</th>
+          <th class="sc-a-h">A (15%)</th>
+          <th class="sc-b-h">B (40%)</th>
+          <th class="sc-c-h">C (30%)</th>
+          <th class="sc-d-h">D (15%)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Primary issuance</strong></td>
-          <td class="heat-low">Brief pause; resumes</td>
-          <td class="heat-med">Narrowed window; higher spreads</td>
-          <td class="heat-high">Effectively closed</td>
-          <td class="heat-critical">Frozen</td>
+          <td class="heat-low">Normalises; more deals like Firstmac</td>
+          <td class="heat-med">Selective windows; higher spreads</td>
+          <td class="heat-high">Significantly constrained</td>
+          <td class="heat-critical">Effectively frozen</td>
         </tr>
         <tr>
           <td><strong>AAA RMBS spreads</strong></td>
-          <td class="heat-low">+5&ndash;10bps</td>
-          <td class="heat-med">+15&ndash;25bps</td>
-          <td class="heat-high">+40&ndash;60bps</td>
-          <td class="heat-critical">+80bps+</td>
+          <td class="heat-low">Stable to tighter</td>
+          <td class="heat-med">+10&ndash;20bps from current</td>
+          <td class="heat-high">+35&ndash;55bps</td>
+          <td class="heat-critical">+70bps+</td>
         </tr>
         <tr>
           <td><strong>Non-bank funding</strong></td>
           <td class="heat-low">Adequate</td>
-          <td class="heat-med">Tightening; warehouse reliance grows</td>
-          <td class="heat-high">Stressed; potential failures</td>
+          <td class="heat-med">Manageable; warehouse reliance grows</td>
+          <td class="heat-high">Stressed; smaller non-banks at risk</td>
           <td class="heat-critical">Crisis; systemic non-bank risk</td>
         </tr>
         <tr>
           <td><strong>Collateral performance</strong></td>
-          <td class="heat-low">Stable</td>
-          <td class="heat-med">Marginal deterioration</td>
-          <td class="heat-high">Meaningful arrears rise; junior tranche losses</td>
+          <td class="heat-low">Continues current trend (improving)</td>
+          <td class="heat-low">Stable to marginal deterioration</td>
+          <td class="heat-high">Arrears rise; watch 1 July excise cliff</td>
           <td class="heat-critical">Significant losses; subordination tested</td>
         </tr>
       </tbody>
@@ -612,7 +813,7 @@
   </div>
 
   <div class="callout">
-    <strong>Monitoring point:</strong> ABS and other non-mortgage securitisation (auto loans, equipment finance) face similar dynamics. Auto loan ABS is particularly sensitive given the fuel-cost channel directly affects the borrower cohort and the value of the underlying collateral (vehicle resale prices).
+    <strong>Monitoring point (updated):</strong> The 1 July 2026 fuel excise cliff is the key risk date for RMBS collateral performance. If the excise cut expires while oil remains above $100/bbl, the sudden increase in fuel costs could trigger a step-change in mortgage arrears &mdash; particularly in non-bank RMBS pools with weaker borrower profiles. The positive arrears data to date provides a buffer, but the buffer is narrower than it appears given the temporary nature of the fiscal support.
   </div>
 </section>
 
@@ -621,61 +822,72 @@
   <h2>7. Insurance &amp; Reinsurance</h2>
 
   <div class="card card-accent-red">
-    <h3>Marine &amp; War-Risk Insurance: Ground Zero</h3>
-    <p>The insurance market is not merely affected by the Hormuz crisis — it is the primary mechanism through which the closure has been effected. The withdrawal of war-risk cover by P&amp;I clubs, rather than physical naval blockade, is what halted shipping. This has far-reaching consequences for the insurance industry itself.</p>
+    <span class="channel-badge badge-update">Updated with actual data</span>
+    <h3>Marine &amp; War-Risk Insurance: Extreme Dislocation</h3>
+    <p>The insurance dynamics that were identified as central to the Hormuz closure mechanism in the original briefing have intensified dramatically. Key developments since 8 March:</p>
 
     <ul class="impact-list">
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Rate escalation:</strong> Marsh estimates marine hull insurance rates in the Gulf may rise 25&ndash;50% absent direct attacks on merchant shipping, and 50&ndash;100%+ if attacks occur. War-risk premiums for Hormuz transit rose from 0.125% to 0.2&ndash;0.4% of vessel value — an increase of approximately $250,000 per transit for VLCCs.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Reinsurance capacity withdrawal:</strong> Reinsurers (notably Skuld and others) are withdrawing capacity at short notice, citing aggregation risk from hundreds of ships clustered outside the strait. This tightening cascades through the reinsurance chain.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>April 1 renewal timing:</strong> The crisis coincides precisely with the 1 April reinsurance renewal — one of the year's most important pricing events. This timing means the conflict will directly influence treaty renewal terms, capacity allocations, and pricing across marine, energy, aviation, and property lines globally.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>War risk premium surge:</strong> Premiums surged <strong>fivefold within 48 hours</strong> of the conflict&rsquo;s escalation. This far exceeded the original estimate of 25&ndash;50% increases.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Replacement coverage:</strong> Where available, replacement coverage is now offered at roughly <strong>60 times pre-crisis rates</strong>. For a VLCC, this represents an effective cost that makes many shipping routes commercially unviable.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>April 1 renewal outcome:</strong> The reinsurance renewal saw dislocation concentrated in specialty lines (marine war risk, energy, political violence). Property-catastrophe renewal was not directly affected, providing some sectoral insulation.</span></li>
+      <li><span class="arrow arrow-neutral">&#x25CF;</span><span><strong>Government as insurer of last resort:</strong> The US Development Finance Corporation (DFC) announced a <strong>$40 billion reinsurance facility</strong> for Gulf shipping &mdash; an extraordinary intervention. The WEF has described governments as becoming &ldquo;insurers of last resort.&rdquo;</span></li>
     </ul>
   </div>
 
   <div class="two-col">
     <div class="card">
-      <h3>Australian General Insurance Impacts</h3>
-      <p>For Australian general insurers (IAG, Suncorp, QBE), the primary transmission channels are:</p>
+      <h3>Australian General Insurance Impacts (Updated)</h3>
+      <p>For Australian general insurers (IAG, Suncorp, QBE), the transmission channels identified in the original briefing are playing out:</p>
       <ul class="impact-list">
-        <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Reinsurance costs:</strong> Higher global reinsurance pricing flows through to Australian insurers at renewals. Even non-marine lines face repricing as reinsurers rebuild capital.</span></li>
-        <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Investment portfolios:</strong> Insurers hold significant fixed-income portfolios. Bond sell-offs create mark-to-market losses, compressing capital adequacy ratios.</span></li>
-        <li><span class="arrow arrow-neutral">&#x25CF;</span><span><strong>Claims dynamics:</strong> No direct claims impact from the conflict for domestic lines, but business interruption claims may emerge if supply-chain disruptions extend.</span></li>
-        <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>QBE global exposure:</strong> As Australia's largest global insurer, QBE's marine, energy, and aviation lines face direct claims and reserving pressure.</span></li>
+        <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Reinsurance costs:</strong> April 1 renewals confirmed higher pricing in specialty lines. Marine and energy lines most affected. Property-cat renewals were a relative bright spot.</span></li>
+        <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Investment portfolios:</strong> The stagflationary environment continues to create mark-to-market losses on insurer fixed-income portfolios.</span></li>
+        <li><span class="arrow arrow-neutral">&#x25CF;</span><span><strong>$40B DFC facility:</strong> The US government backstop for Gulf shipping insurance partially alleviates the total withdrawal of private capacity but raises questions about moral hazard and the sustainability of government-backed coverage.</span></li>
+        <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>QBE global exposure:</strong> QBE&rsquo;s marine, energy, and aviation lines face direct reserving pressure from the 60x premium surge and concentrated Gulf exposure.</span></li>
       </ul>
     </div>
     <div class="card">
-      <h3>Scenario Impact: Insurance Sector</h3>
+      <h3>Scenario Impact: Insurance Sector (Updated)</h3>
       <table>
         <thead>
           <tr>
             <th>Metric</th>
-            <th class="sc-a-h">A</th>
-            <th class="sc-d-h">C/D</th>
+            <th class="sc-a-h">A (15%)</th>
+            <th class="sc-b-h">B (40%)</th>
+            <th class="sc-d-h">C/D (45%)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Marine war premiums</strong></td>
-            <td class="heat-med">+25&ndash;50%</td>
-            <td class="heat-critical">+100%+; capacity withdrawn</td>
+            <td class="heat-med">Gradually normalise from 5x</td>
+            <td class="heat-high">Remain elevated 5&ndash;10x</td>
+            <td class="heat-critical">60x+ sustained; capacity withdrawn entirely</td>
           </tr>
           <tr>
-            <td><strong>Reinsurance renewal (Apr 1)</strong></td>
-            <td class="heat-med">+5&ndash;10% property/marine</td>
-            <td class="heat-critical">+20&ndash;40%; coverage restrictions</td>
+            <td><strong>$40B DFC facility usage</strong></td>
+            <td class="heat-low">Minimal draw-down</td>
+            <td class="heat-med">Moderate; becomes structural</td>
+            <td class="heat-critical">Exhausted; calls for expansion</td>
           </tr>
           <tr>
             <td><strong>Insurer investment returns</strong></td>
-            <td class="heat-low">Marginal drag</td>
+            <td class="heat-low">Marginal recovery</td>
+            <td class="heat-med">Ongoing drag</td>
             <td class="heat-high">Meaningful losses on fixed income</td>
           </tr>
           <tr>
             <td><strong>Capital adequacy</strong></td>
             <td class="heat-low">Stable</td>
-            <td class="heat-high">Pressured; potential capital raises (QBE)</td>
+            <td class="heat-med">Pressured for specialty writers</td>
+            <td class="heat-critical">Capital raises likely (QBE at risk)</td>
           </tr>
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div class="callout-red callout">
+    <strong>Structural shift:</strong> The 60x premium increase and the necessity of a $40 billion government reinsurance facility represent a potential structural break in the marine insurance market. Even under Scenario A (resolution), the market has learned that Gulf shipping risk was dramatically under-priced. Premiums are unlikely to return to pre-conflict levels for years, creating a permanent increase in shipping costs through the Strait and a persistent drag on global trade costs.
   </div>
 </section>
 
@@ -684,70 +896,94 @@
   <h2>8. Superannuation</h2>
 
   <div class="card card-accent-purple">
-    <h3>System-Level Exposure</h3>
-    <p>Australia's $4 trillion+ superannuation system is the world's fourth-largest pool of retirement savings and the dominant institutional investor in Australian markets. The conflict affects super funds through multiple channels, with the significance depending heavily on which scenario materialises.</p>
+    <span class="channel-badge badge-update">Updated with actual data</span>
+    <h3>System Performance: Drawdown and Recovery</h3>
+    <p>Australia&rsquo;s superannuation system (~$4.49 trillion as of December 2025) has navigated the crisis largely as expected under a Scenario B outcome. Actual performance data now available:</p>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="value" style="color:var(--red);">&minus;3.8%</div>
+        <div class="label">Median Growth Fund (March)</div>
+      </div>
+      <div class="stat-box">
+        <div class="value" style="color:var(--green);">+3.1%</div>
+        <div class="label">Median Growth Fund (April est.)</div>
+      </div>
+      <div class="stat-box">
+        <div class="value" style="color:var(--navy);">~6%</div>
+        <div class="label">FY26 YTD Median Return</div>
+      </div>
+      <div class="stat-box">
+        <div class="value" style="color:var(--green);">Normal</div>
+        <div class="label">Member Switching Levels</div>
+      </div>
+    </div>
+
+    <p>The March drawdown of <strong>3.8%</strong> for the median growth fund was consistent with the Scenario B estimate of &minus;1% to &minus;3% drag, sitting at the worse end of that range. The April recovery of approximately <strong>+3.1%</strong> has almost fully offset the March decline, demonstrating the resilience that super fund experts have been emphasising.</p>
+
+    <p>Critically, <strong>member switching has remained at normal levels</strong>. This is a significant positive for financial stability &mdash; the feared scenario of panic-driven switching into cash (which would force liquidation of illiquid assets) has not materialised. Industry experts attribute this to improved member communication and the post-COVID learning effect.</p>
 
     <div class="chart-container" style="max-height:320px; margin-top:12px;">
       <canvas id="superAllocationChart"></canvas>
     </div>
 
     <h4>Listed equities (typically 40&ndash;50% of balanced funds)</h4>
-    <p>The sector bifurcation in equities described in Section 2 flows directly into super fund returns. Funds with overweight positions in energy benefit; those overweight consumer discretionary, travel, or retail face underperformance. Index-tracking strategies capture the net effect. Active managers' relative performance will be significantly affected by their sector positioning entering the crisis.</p>
+    <p>The ASX 200&rsquo;s 10.2% drawdown and subsequent recovery to 8,900&ndash;9,000 has played out as a net modest drag on FY26 returns. The sector rotation (energy up, consumer down, then partial reversal) has created dispersion in fund performance based on active positioning.</p>
 
     <h4>Fixed income (typically 15&ndash;20%)</h4>
-    <p>The failure of bonds to rally during this shock (see Section 3) means fixed-income allocations are not providing their expected diversification benefit. In a stagflationary scenario (C/D), both equities and bonds underperform simultaneously — the worst outcome for traditional balanced portfolios.</p>
+    <p>As forecast, bonds have not provided their expected diversification benefit. The stagflationary environment has confirmed the original briefing&rsquo;s warning about the failure of traditional portfolio insurance mechanisms.</p>
 
-    <h4>Unlisted assets (typically 20&ndash;30%: infrastructure, property, private equity, private credit)</h4>
-    <p>These are discussed in detail in Section 9. The key issue for super is that unlisted asset valuations lag listed markets. If listed assets fall materially (Scenarios C/D), the stale pricing of unlisted assets creates a valuation gap that may incentivise member switching — a potential liquidity risk if redemption volumes exceed liquid asset buffers.</p>
+    <h4>Unlisted assets (typically 20&ndash;30%)</h4>
+    <p>The valuation lag issue identified in the original briefing has not yet become acute, primarily because the March drawdown was followed by an April recovery. If the situation escalates to Scenario C, the lag issue would re-emerge with greater force.</p>
   </div>
 
   <div class="card">
-    <h3>Scenario Impact: Superannuation</h3>
+    <h3>Scenario Impact: Superannuation (Updated)</h3>
     <table>
       <thead>
         <tr>
           <th>Dimension</th>
-          <th class="sc-a-h">A: Swift</th>
-          <th class="sc-b-h">B: Protracted</th>
-          <th class="sc-c-h">C: Escalation</th>
-          <th class="sc-d-h">D: Conflagration</th>
+          <th class="sc-a-h">A: Resolution (15%)</th>
+          <th class="sc-b-h">B: Stalemate (40%)</th>
+          <th class="sc-c-h">C: Escalation (30%)</th>
+          <th class="sc-d-h">D: Conflagration (15%)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Balanced fund return impact</strong></td>
-          <td class="heat-low">Negligible (±0.5%)</td>
-          <td class="heat-med">&minus;1% to &minus;3% drag</td>
-          <td class="heat-high">&minus;4% to &minus;8%</td>
-          <td class="heat-critical">&minus;10%+ (2020-level drawdown)</td>
+          <td><strong>Balanced fund FY26 return</strong></td>
+          <td class="heat-low">7&ndash;9% (on track)</td>
+          <td class="heat-low">5&ndash;7% (current ~6%)</td>
+          <td class="heat-high">2&ndash;4%; meaningful drag</td>
+          <td class="heat-critical">Negative; 2020-level drawdown</td>
         </tr>
         <tr>
-          <td><strong>Member switching risk</strong></td>
-          <td class="heat-low">Minimal</td>
-          <td class="heat-low">Low</td>
-          <td class="heat-high">Moderate: switch to cash/conservative</td>
-          <td class="heat-critical">High: panic-driven switching strains liquidity</td>
+          <td><strong>Member switching</strong></td>
+          <td class="heat-low">Remains normal</td>
+          <td class="heat-low">Remains normal (current)</td>
+          <td class="heat-med">Elevated; manageable</td>
+          <td class="heat-high">Panic-driven; liquidity strain</td>
         </tr>
         <tr>
           <td><strong>Unlisted valuation gap</strong></td>
           <td class="heat-low">Negligible</td>
-          <td class="heat-med">Emerging</td>
+          <td class="heat-low">Minimal (drawdown recovered)</td>
           <td class="heat-high">Material; APRA scrutiny intensifies</td>
           <td class="heat-critical">Critical; equity concerns for early redeemers</td>
         </tr>
         <tr>
           <td><strong>Liquidity stress</strong></td>
           <td class="heat-low">None</td>
-          <td class="heat-low">Low</td>
+          <td class="heat-low">None (current)</td>
           <td class="heat-med">Moderate for funds heavy in illiquids</td>
-          <td class="heat-high">Significant; echoes of COVID early-release episode</td>
+          <td class="heat-high">Significant; echoes of COVID early-release</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="callout-purple callout">
-    <strong>Valuation lag risk:</strong> APRA's heightened supervision of unlisted asset valuations (announced August 2024) takes on added urgency. If listed markets fall 15&ndash;25% (Scenario D) while unlisted assets are marked flat, the resulting valuation gap creates adverse selection: members who switch to cash or conservative options realise an exit price that has not yet reflected the drawdown, transferring losses to remaining members. This was a key concern during COVID and would re-emerge in a severe scenario.
+    <strong>Assessment (updated):</strong> Superannuation is the bright spot in this crisis. The system has absorbed a material shock (March &minus;3.8%) and recovered quickly (April +3.1%), member behaviour has been rational, and FY26 returns remain positive at ~6%. The pre-existing structural concerns about unlisted asset valuations have not been tested because the drawdown was not deep or sustained enough. This assessment would change materially under Scenarios C or D.
   </div>
 </section>
 
@@ -756,95 +992,108 @@
   <h2>9. Private Markets: Credit &amp; Equity</h2>
 
   <div class="card card-accent-red">
-    <h3>Private Credit: A Pre-Existing Condition Meets a New Shock</h3>
-    <p>The private credit market enters the Iran crisis already under significant stress. In the first quarter of 2026, two landmark events have underscored structural vulnerabilities:</p>
+    <span class="channel-badge badge-stability">Critical Update</span>
+    <h3>Private Credit: Industry-Wide Stress Now Evident</h3>
+    <p>The original briefing identified BlackRock/HPS and Blackstone BCRED as harbingers of broader private credit stress. Seven weeks later, the data confirms this was the leading edge of an <strong>industry-wide phenomenon</strong>. The private credit boom is &ldquo;starting to crack.&rdquo;</p>
 
+    <h4>Updated Fund-Level Data</h4>
     <div class="two-col" style="margin: 16px 0;">
       <div style="background:var(--gray-50); border-radius:8px; padding:16px; border:1px solid var(--gray-200);">
         <h4 style="margin-top:0;">BlackRock / HPS Corporate Lending Fund</h4>
-        <p style="font-size:14px;">The $26 billion fund received ~$1.2 billion in withdrawal requests (9.3% of NAV) in Q1 2026. BlackRock imposed redemption gates — the first time it has limited withdrawals from a flagship private credit vehicle.</p>
+        <p style="font-size:14px;">Imposed a <strong>5% redemption cap</strong>. Received $1.57 billion in Q1 redemption requests but could only honour approximately one-third. This is more severe than the $1.2B reported in the original briefing.</p>
       </div>
       <div style="background:var(--gray-50); border-radius:8px; padding:16px; border:1px solid var(--gray-200);">
         <h4 style="margin-top:0;">Blackstone BCRED</h4>
-        <p style="font-size:14px;">The $82 billion BCRED fund faced $3.7 billion in redemption requests in Q1 2026 ($1.7 billion in the latest period alone), echoing the BREIT episode of 2022&ndash;2023 but in the credit space.</p>
+        <p style="font-size:14px;">Faced <strong>$3.7 billion in Q1 redemptions</strong>. Blackstone took the extraordinary step of raising its redemption limit to 7% and injecting $400 million alongside employees to stabilise the fund.</p>
       </div>
     </div>
 
-    <p>The Iran conflict amplifies these existing vulnerabilities through several channels:</p>
+    <h4>Industry-Wide Redemption Data: Q1 2026</h4>
+    <p>The following chart shows Q1 2026 redemption requests as a percentage of fund NAV across the four largest private credit platforms. These numbers are unprecedented and confirm that the stress is systemic rather than idiosyncratic:</p>
+
+    <div class="chart-container" style="max-height:320px; margin: 16px 0;">
+      <canvas id="privateRedemptionChart"></canvas>
+    </div>
+
+    <div class="callout-red callout" style="margin-top: 16px;">
+      <strong>Blue Owl at 21.9%:</strong> Nearly one-quarter of Blue Owl&rsquo;s private credit fund NAV was subject to redemption requests in a single quarter. This level of redemption pressure, if sustained, would require either massive gating, asset fire sales, or external capital injection. Blue Owl&rsquo;s number alone represents a potential systemic event for the private credit sector.
+    </div>
+
+    <p>The Iran conflict amplifies these pre-existing vulnerabilities through the channels identified in the original briefing, but with greater force:</p>
     <ul class="impact-list">
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Accelerated redemption pressure:</strong> Broader market volatility and risk-off sentiment are likely to increase redemption requests at private credit funds, precisely when the underlying loans are most difficult to liquidate.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Underlying credit quality:</strong> Private credit portfolios are concentrated in mid-market corporate loans. Borrowers in transport, logistics, hospitality, and consumer-facing sectors face cash-flow compression from rising energy costs. Default risk is rising in these sub-sectors.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Valuation opacity:</strong> Private credit assets are not marked-to-market in real time. NAVs may not reflect deteriorating credit quality for weeks or months, creating the conditions for a sudden repricing event.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Contagion via super funds:</strong> Australian superannuation funds have significantly increased private credit allocations in recent years. ASIC's 2025&ndash;26 Corporate Plan confirmed surveillance of retail and wholesale private credit funds, focusing on governance, valuation, liquidity, and disclosure. The Iran conflict may accelerate the timeline on any regulatory findings.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Accelerated redemption pressure:</strong> The broader risk-off environment and stagflation fears are driving institutional investors to reduce illiquid exposures. The ceasefire whipsaw (hope then disappointment) may be particularly damaging for investor confidence.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Underlying credit quality:</strong> With Brent at $101+ and the RBA at 4.10%, borrowers in transport, logistics, hospitality, and consumer-facing sectors face double compression: rising input costs AND rising debt-service costs. Default risk is materially higher than at 8 March.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Valuation opacity:</strong> NAVs still likely do not fully reflect deteriorating credit quality. The gap between reported NAVs and fair value is probably widening.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Contagion via super funds:</strong> Australian superannuation funds&rsquo; private credit allocations are exposed to these same dynamics. ASIC&rsquo;s surveillance of private credit funds takes on added urgency.</span></li>
     </ul>
   </div>
 
   <div class="card card-accent-orange">
-    <h3>Private Equity: Valuation &amp; Exit Headwinds</h3>
-    <p>Private equity faces a different but related set of challenges. APRA has maintained heightened supervision of unlisted asset valuations since August 2024, and the conflict introduces fresh headwinds:</p>
+    <h3>Private Equity: Valuation &amp; Exit Headwinds (Updated)</h3>
+    <p>Private equity continues to face the headwinds identified in the original briefing, now compounded by seven additional weeks of elevated uncertainty:</p>
 
     <ul class="impact-list">
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Exit market closure:</strong> IPO windows, which were already narrow, effectively close under Scenarios B&ndash;D. PE managers who have been holding out for higher valuations face further delays in returning capital to investors.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Denominator effect:</strong> If listed equity falls materially (Scenarios C/D) while PE portfolios are marked slowly, PE allocations rise as a percentage of total portfolio — the "denominator effect." This can trigger automatic rebalancing sales, forced at distressed prices into illiquid secondary markets.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Portfolio company stress:</strong> PE-owned companies typically carry higher leverage than publicly-listed peers. Rising interest rates (RBA tightening) + rising input costs (fuel, energy) = double compression on cash flows and debt-service coverage.</span></li>
-      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Fundraising chill:</strong> LP appetite for new PE commitments declines during periods of market stress and uncertainty, constraining the primary fundraising market.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Exit market:</strong> IPO windows remain effectively closed. The ASX 200&rsquo;s recovery to 8,900&ndash;9,000 has not been sufficient to reopen the IPO pipeline, as uncertainty about the conflict&rsquo;s trajectory deters both issuers and investors.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Denominator effect:</strong> The March drawdown created a brief denominator effect that partially reversed in April. Under Scenarios C/D, this would return with greater force.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Portfolio company stress:</strong> PE-owned companies are now facing the compounded effect of two RBA hikes (to 4.10%) plus seven weeks of elevated energy costs. Cash-flow and debt-service coverage ratios are deteriorating in exposed sectors.</span></li>
+      <li><span class="arrow arrow-up">&#x25B2;</span><span><strong>Fundraising:</strong> LP appetite for new commitments has further declined as institutional investors focus on liquidity management and de-risking.</span></li>
     </ul>
   </div>
 
   <div class="chart-wrap">
-    <h3>Private Markets Stress Cascade: How Iran Conflict Amplifies Pre-Existing Vulnerabilities</h3>
+    <h3>Private Markets Stress: Pre-Existing vs. Conflict-Driven (Updated)</h3>
     <div class="chart-container" style="max-height:320px;">
       <canvas id="privateMarketsChart"></canvas>
     </div>
   </div>
 
   <div class="card">
-    <h3>Scenario Impact: Private Markets</h3>
+    <h3>Scenario Impact: Private Markets (Updated)</h3>
     <table>
       <thead>
         <tr>
           <th>Dimension</th>
-          <th class="sc-a-h">A: Swift</th>
-          <th class="sc-b-h">B: Protracted</th>
-          <th class="sc-c-h">C: Escalation</th>
-          <th class="sc-d-h">D: Conflagration</th>
+          <th class="sc-a-h">A: Resolution (15%)</th>
+          <th class="sc-b-h">B: Stalemate (40%)</th>
+          <th class="sc-c-h">C: Escalation (30%)</th>
+          <th class="sc-d-h">D: Conflagration (15%)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Pvt credit redemption pressure</strong></td>
-          <td class="heat-low">Existing pace continues</td>
-          <td class="heat-med">Accelerates; more gates imposed</td>
-          <td class="heat-high">Widespread gating; fund suspensions</td>
-          <td class="heat-critical">Systemic liquidity crisis in sector</td>
+          <td class="heat-med">Existing pace (8&ndash;22% Q1) continues; gates remain</td>
+          <td class="heat-high">Accelerates; more funds gate; secondary market discounts widen</td>
+          <td class="heat-critical">Widespread gating; fund suspensions; regulatory intervention</td>
+          <td class="heat-critical">Systemic crisis; forced asset sales; contagion to super</td>
         </tr>
         <tr>
           <td><strong>Pvt credit default rates</strong></td>
-          <td class="heat-low">Stable at ~2&ndash;3%</td>
-          <td class="heat-med">Rising to 4&ndash;5% in exposed sectors</td>
-          <td class="heat-high">5&ndash;8%; recovery rates decline</td>
-          <td class="heat-critical">8%+; distressed debt cycle</td>
+          <td class="heat-med">Rising to 3&ndash;4% in exposed sectors</td>
+          <td class="heat-high">4&ndash;6%; recovery rates declining</td>
+          <td class="heat-critical">6&ndash;10%; distressed debt cycle</td>
+          <td class="heat-critical">10%+; widespread defaults</td>
         </tr>
         <tr>
           <td><strong>PE valuation markdowns</strong></td>
-          <td class="heat-low">Minimal</td>
-          <td class="heat-med">5&ndash;10% in energy-sensitive portfolios</td>
-          <td class="heat-high">10&ndash;20% broad-based</td>
-          <td class="heat-critical">20%+; denominator effect in full force</td>
+          <td class="heat-low">5&ndash;8% in energy-sensitive portfolios</td>
+          <td class="heat-med">8&ndash;15% in exposed sectors</td>
+          <td class="heat-high">15&ndash;25% broad-based</td>
+          <td class="heat-critical">25%+; denominator effect in full force</td>
         </tr>
         <tr>
           <td><strong>PE exit / IPO market</strong></td>
-          <td class="heat-low">Reopens post-resolution</td>
-          <td class="heat-med">Delayed by 6&ndash;12 months</td>
-          <td class="heat-high">Effectively closed for 12+ months</td>
+          <td class="heat-med">Gradual reopening H2 2026</td>
+          <td class="heat-high">Delayed 6&ndash;12 months</td>
+          <td class="heat-critical">Effectively closed 12+ months</td>
           <td class="heat-critical">Multi-year freeze</td>
         </tr>
         <tr>
           <td><strong>Impact on Aus super funds</strong></td>
-          <td class="heat-low">Marginal</td>
-          <td class="heat-med">Performance drag; APRA attention</td>
-          <td class="heat-high">Valuation gap emerges; member equity concerns</td>
-          <td class="heat-critical">Potential for regulatory intervention on valuations</td>
+          <td class="heat-med">Performance drag; APRA/ASIC monitoring</td>
+          <td class="heat-high">Material drag; regulatory action likely</td>
+          <td class="heat-critical">Valuation gap; member equity concerns</td>
+          <td class="heat-critical">Regulatory intervention on valuations; potential gating</td>
         </tr>
       </tbody>
     </table>
@@ -856,51 +1105,51 @@
   <h2>10. Systemic Risk &amp; Cross-Sector Interactions</h2>
 
   <div class="card card-accent-red">
-    <h3>Reinforcing Feedback Loops</h3>
-    <p>The most significant financial stability concern is not any single market's response, but the interaction effects between markets under Scenarios C and D. Several reinforcing feedback loops are possible:</p>
+    <h3>Reinforcing Feedback Loops (Updated Assessment)</h3>
+    <p>The four feedback loops identified in the original briefing remain the key systemic risk channels. Seven weeks of actual data allows a more informed assessment of which loops are activating and which remain latent:</p>
 
     <div class="chart-container" style="max-height:300px; margin: 16px 0;">
       <canvas id="feedbackChart"></canvas>
     </div>
 
-    <h4>Loop 1: RBA &ndash; Consumer Credit &ndash; Securitisation</h4>
-    <p>Energy-driven inflation forces the RBA to maintain or raise rates. Higher rates increase mortgage stress. Mortgage arrears rise, worsening RMBS collateral performance. RMBS spreads widen, raising funding costs for non-bank lenders. Non-bank lenders tighten credit or face failure, further constraining household credit availability.</p>
+    <h4>Loop 1: RBA &ndash; Consumer Credit &ndash; Securitisation <span class="channel-badge badge-stability">PARTIALLY ACTIVATED</span></h4>
+    <p>This loop has partially activated. The RBA raised rates twice (to 4.10%), increasing mortgage stress. However, the fuel excise cut has dampened the consumer impact, and RMBS arrears have actually improved. <strong>Current severity: 4/10.</strong> The 1 July excise cliff could push this to 6&ndash;7/10 if oil remains above $100.</p>
 
-    <h4>Loop 2: Private Markets &ndash; Superannuation &ndash; Liquidity</h4>
-    <p>Listed markets fall while private market valuations lag. The valuation gap incentivises member switching. Switching volumes drain liquid assets. Funds may be forced to sell liquid holdings at distressed prices or gate redemptions. Fire sales further depress listed markets.</p>
+    <h4>Loop 2: Private Markets &ndash; Superannuation &ndash; Liquidity <span class="channel-badge badge-stability">PARTIALLY ACTIVATED</span></h4>
+    <p>Private credit redemption data (8&ndash;22% in Q1) confirms this loop is activating at the private credit level. However, super fund member switching has remained normal, breaking the amplification chain. <strong>Current severity: 5/10.</strong> This would jump to 8/10 if a major private credit fund fails or suspends entirely.</p>
 
-    <h4>Loop 3: Derivatives &ndash; Margin &ndash; Liquidity</h4>
-    <p>Rising energy prices and volatility increase margin requirements. Margin calls drain cash from market participants. Forced position liquidation increases volatility. Higher volatility triggers further margin increases. This CCP procyclicality loop is a well-known systemic amplifier.</p>
+    <h4>Loop 3: Derivatives &ndash; Margin &ndash; Liquidity <span class="channel-badge badge-all">LATENT</span></h4>
+    <p>Despite extreme oil volatility, no major margin-call cascade has materialised. The VIX at 18.92 suggests derivative market stress is being managed. The 17&ndash;18 April whipsaw was the highest-risk moment. <strong>Current severity: 3/10.</strong> A clean break above $120 oil would rapidly escalate this to 7&ndash;8/10.</p>
 
-    <h4>Loop 4: Insurance &ndash; Trade Finance &ndash; Real Economy</h4>
-    <p>Withdrawal of war-risk insurance halts shipping. Shipping disruption starves industry of raw materials and fuel. Business cash flows deteriorate. Business loan arrears rise. Banks tighten lending standards. Credit contraction deepens the economic downturn.</p>
+    <h4>Loop 4: Insurance &ndash; Trade Finance &ndash; Real Economy <span class="channel-badge badge-stability">ACTIVATED</span></h4>
+    <p>This is the most clearly activated loop. Insurance withdrawal continues to be the primary mechanism blocking Hormuz shipping. The $40B DFC facility is an attempt to break this loop, but its effectiveness is uncertain. The 60x premium surge and the re-closure on 18 April demonstrate the fragility of any insurance-led reopening. <strong>Current severity: 7/10.</strong></p>
   </div>
 
   <div class="card">
-    <h3>Scenario-Weighted Risk Assessment Summary</h3>
-    <p>The following heat map summarises the assessed severity of financial system risk across each market segment and scenario, where 1 = minimal and 5 = severe / crisis-level:</p>
+    <h3>Scenario-Weighted Risk Assessment Summary (Updated)</h3>
+    <p>The following heat map summarises the assessed severity of financial system risk as of 23 April 2026, incorporating actual data. Ratings have been adjusted from the original briefing based on observed outcomes. Scale: 1 = minimal, 5 = severe / crisis-level:</p>
     <div style="overflow-x:auto;">
     <table>
       <thead>
         <tr>
           <th>Market Segment</th>
-          <th class="sc-a-h">A (30%)</th>
-          <th class="sc-b-h">B (35%)</th>
-          <th class="sc-c-h">C (25%)</th>
-          <th class="sc-d-h">D (10%)</th>
+          <th class="sc-a-h">A (15%)</th>
+          <th class="sc-b-h">B (40%)</th>
+          <th class="sc-c-h">C (30%)</th>
+          <th class="sc-d-h">D (15%)</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Equities</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-critical">5</td></tr>
-        <tr><td><strong>Government bonds</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-high">3</td></tr>
+        <tr><td><strong>Equities</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">4</td><td class="heat-critical">5</td></tr>
+        <tr><td><strong>Government bonds</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-high">4</td></tr>
         <tr><td><strong>Corporate credit</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">4</td><td class="heat-critical">5</td></tr>
-        <tr><td><strong>Derivatives / margin</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-critical">5</td></tr>
-        <tr><td><strong>Consumer credit</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-critical">4</td></tr>
-        <tr><td><strong>Securitisation (RMBS)</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-critical">4</td></tr>
-        <tr><td><strong>Insurance / reinsurance</strong></td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-high">4</td><td class="heat-critical">5</td></tr>
+        <tr><td><strong>Derivatives / margin</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">4</td><td class="heat-critical">5</td></tr>
+        <tr><td><strong>Consumer credit</strong></td><td class="heat-low">1</td><td class="heat-med">3</td><td class="heat-high">4</td><td class="heat-critical">5</td></tr>
+        <tr><td><strong>Securitisation (RMBS)</strong></td><td class="heat-low">1</td><td class="heat-low">1</td><td class="heat-high">3</td><td class="heat-critical">4</td></tr>
+        <tr><td><strong>Insurance / reinsurance</strong></td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-critical">5</td><td class="heat-critical">5</td></tr>
         <tr><td><strong>Superannuation</strong></td><td class="heat-low">1</td><td class="heat-low">1</td><td class="heat-med">3</td><td class="heat-high">4</td></tr>
-        <tr><td><strong>Private credit</strong></td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-high">4</td><td class="heat-critical">5</td></tr>
-        <tr><td><strong>Private equity</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">3</td><td class="heat-critical">4</td></tr>
+        <tr><td><strong>Private credit</strong></td><td class="heat-med">3</td><td class="heat-high">4</td><td class="heat-critical">5</td><td class="heat-critical">5</td></tr>
+        <tr><td><strong>Private equity</strong></td><td class="heat-low">1</td><td class="heat-med">2</td><td class="heat-high">4</td><td class="heat-critical">5</td></tr>
       </tbody>
     </table>
     </div>
@@ -910,18 +1159,56 @@
       <span style="display:inline-block;width:14px;height:14px;background:#FED7AA;border-radius:2px;vertical-align:middle;margin-right:4px;"></span> 3&ndash;4: Elevated &ndash; High &nbsp;
       <span style="display:inline-block;width:14px;height:14px;background:#FECACA;border-radius:2px;vertical-align:middle;margin-right:4px;"></span> 5: Severe / crisis-level
     </p>
+
+    <h4 style="margin-top: 20px;">Key Changes from Original Assessment</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th>Change from 8 Mar</th>
+          <th>Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Private credit</strong></td>
+          <td style="color:var(--red); font-weight:700;">Upgraded (worse)</td>
+          <td>Industry-wide redemption data (8&ndash;22% of NAV) confirms systemic rather than idiosyncratic stress</td>
+        </tr>
+        <tr>
+          <td><strong>Insurance</strong></td>
+          <td style="color:var(--red); font-weight:700;">Upgraded (worse)</td>
+          <td>60x premium surge, $40B government backstop required; April 1 renewal confirmed dislocation</td>
+        </tr>
+        <tr>
+          <td><strong>Consumer credit</strong></td>
+          <td style="color:var(--red); font-weight:700;">Upgraded (worse) for B</td>
+          <td>Two RBA hikes (to 4.10%) plus fuel costs; excise cut is temporary (expires 1 Jul)</td>
+        </tr>
+        <tr>
+          <td><strong>Securitisation</strong></td>
+          <td style="color:var(--green); font-weight:700;">Downgraded (better) for B</td>
+          <td>Firstmac $2.4B deal, arrears declining, RBA FSR assessment positive</td>
+        </tr>
+        <tr>
+          <td><strong>Superannuation</strong></td>
+          <td style="color:var(--green); font-weight:700;">Unchanged / slightly better</td>
+          <td>Member switching normal; March drawdown recovered in April; FY26 returns ~6%</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="callout-red callout">
-    <strong>Key finding:</strong> Under the most likely single scenario (B: Protracted Disruption, 35% probability), financial system risks are manageable but require close monitoring, with private credit and insurance/reinsurance as the segments showing the most elevated pre-existing vulnerabilities. Under the combined probability of the more severe scenarios (C + D = 35%), systemic risk becomes a genuine concern, with cross-sector feedback loops capable of amplifying initial shocks into a broader financial stability event. The interaction between energy-driven inflation, RBA policy responses, and household leverage is the single most consequential transmission channel for Australia.
+    <strong>Updated key finding:</strong> Under the most likely scenario (B: Grinding Stalemate, 40% probability), financial system risks are elevated but manageable, with <strong>private credit and insurance/reinsurance</strong> as the segments showing the most acute stress. Private credit has deteriorated materially since the original briefing, with industry-wide redemption rates of 8&ndash;22% of NAV confirming a sector-wide problem. Under the combined probability of the more severe scenarios (C + D = 45%, up from 35% in the original), systemic risk is a genuine and growing concern. Three critical dates to watch: <strong>(1)</strong> Trump&rsquo;s 3&ndash;5 day deadline for Iran (late April); <strong>(2)</strong> the fuel excise cliff on <strong>1 July 2026</strong>; and <strong>(3)</strong> any major private credit fund failure or suspension. The interaction between energy-driven inflation, RBA policy responses, and household leverage remains the single most consequential transmission channel for Australian financial stability.
   </div>
 </section>
 
 </div><!-- .container -->
 
 <div class="footer">
-  <p>This analysis is based on publicly available information, analyst forecasts, and regulatory publications as of 8 March 2026.<br>
-  Scenarios and probabilities represent informed estimates and should be updated as the situation evolves.<br>
+  <p>This analysis is based on publicly available information, analyst forecasts, and regulatory publications as of 23 April 2026.<br>
+  Updated from original briefing of 8 March 2026. Scenarios and probabilities represent informed estimates and should be updated as the situation evolves.<br>
   This document does not constitute financial advice and contains no policy prescriptions.</p>
 </div>
 
@@ -931,16 +1218,72 @@ Chart.defaults.font.family = "'Inter', sans-serif";
 Chart.defaults.font.size = 12;
 Chart.defaults.color = '#374151';
 
-// 1) ASX Sector Impact
+// 0) Oil Price Actual Trajectory
+new Chart(document.getElementById('oilTrajectoryChart'), {
+  type: 'line',
+  data: {
+    labels: ['Pre-conflict\n(~25 Feb)', '2 Mar\n(Hormuz closed)', '8 Mar\n(Original brief)', 'Mid-Mar', '23 Mar\n(Peak disruption)', '1 Apr\n(Excise cut)', 'Early Apr\n(Peak oil)', '7 Apr\n(Ceasefire)', '17 Apr\n(Brief opening)', '18 Apr\n(Re-closed)', '22 Apr\n(Ship seizures)'],
+    datasets: [
+      {
+        label: 'Brent Crude (actual, $/bbl)',
+        data: [73, 78, 83, 98, 110, 115, 120, 108, 91, 95, 101.73],
+        borderColor: '#DC2626',
+        backgroundColor: 'rgba(220,38,38,0.08)',
+        borderWidth: 2.5,
+        tension: 0.3,
+        fill: true,
+        pointRadius: 5,
+        pointBackgroundColor: function(ctx) {
+          var val = ctx.raw;
+          if (val >= 115) return '#DC2626';
+          if (val >= 95) return '#EA580C';
+          if (val <= 91) return '#059669';
+          return '#2563EB';
+        }
+      },
+      {
+        label: 'Scenario A ceiling ($85)',
+        data: [85,85,85,85,85,85,85,85,85,85,85],
+        borderColor: '#059669',
+        borderWidth: 1.5,
+        borderDash: [6,4],
+        pointRadius: 0,
+        fill: false
+      },
+      {
+        label: 'Scenario B ceiling ($110)',
+        data: [110,110,110,110,110,110,110,110,110,110,110],
+        borderColor: '#2563EB',
+        borderWidth: 1.5,
+        borderDash: [6,4],
+        pointRadius: 0,
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': $' + ctx.raw; } } }
+    },
+    scales: {
+      y: { title: { display: true, text: 'Brent Crude (US$/bbl)' }, min: 65, max: 130, grid: { color: '#F3F4F6' } },
+      x: { grid: { display: false }, ticks: { maxRotation: 45, font: { size: 10 } } }
+    }
+  }
+});
+
+// 1) ASX Sector Impact (Updated)
 new Chart(document.getElementById('sectorChart'), {
   type: 'bar',
   data: {
-    labels: ['Energy', 'Materials', 'Gold Miners', 'Utilities', 'Financials', 'Healthcare', 'Industrials', 'Consumer Disc.', 'Travel/Airlines', 'Retail'],
+    labels: ['Energy', 'Gold Miners', 'Materials', 'Healthcare', 'Consumer Staples', 'Utilities', 'Financials', 'Industrials', 'Consumer Disc.', 'Travel/Airlines', 'Retail'],
     datasets: [{
-      label: 'Estimated performance since 28 Feb (%)',
-      data: [18, 5, 12, 2, -2, -1, -4, -6, -9, -7],
-      backgroundColor: ctx => ctx.raw >= 0 ? 'rgba(5,150,105,0.7)' : 'rgba(220,38,38,0.7)',
-      borderColor: ctx => ctx.raw >= 0 ? '#059669' : '#DC2626',
+      label: 'Performance since 28 Feb (%)',
+      data: [22, 18, 4, 2, 1, 0, -3, -5, -8, -12, -10],
+      backgroundColor: function(ctx) { return ctx.raw >= 0 ? 'rgba(5,150,105,0.7)' : 'rgba(220,38,38,0.7)'; },
+      borderColor: function(ctx) { return ctx.raw >= 0 ? '#059669' : '#DC2626'; },
       borderWidth: 1.5,
       borderRadius: 4
     }]
@@ -950,30 +1293,30 @@ new Chart(document.getElementById('sectorChart'), {
     indexAxis: 'y',
     plugins: {
       legend: { display: false },
-      tooltip: { callbacks: { label: ctx => `${ctx.raw > 0 ? '+' : ''}${ctx.raw}%` } }
+      tooltip: { callbacks: { label: function(ctx) { return (ctx.raw > 0 ? '+' : '') + ctx.raw + '%'; } } }
     },
     scales: {
-      x: { grid: { color: '#F3F4F6' }, title: { display: true, text: 'Performance (%)' } },
+      x: { grid: { color: '#F3F4F6' }, title: { display: true, text: 'Performance since 28 Feb (%)' } },
       y: { grid: { display: false } }
     }
   }
 });
 
-// 2) Credit Spread Scenarios
+// 2) Credit Spread Chart (Updated with actual data)
 new Chart(document.getElementById('creditSpreadChart'), {
   type: 'bar',
   data: {
-    labels: ['A: Swift', 'B: Protracted', 'C: Escalation', 'D: Conflagration'],
+    labels: ['Current\n(22 Apr)', 'A: Resolution', 'B: Stalemate', 'C: Escalation', 'D: Conflagration'],
     datasets: [
       {
-        label: 'IG Spread Widening (bps)',
-        data: [8, 22, 55, 115],
+        label: 'IG Spreads (pp)',
+        data: [0.83, 0.75, 1.1, 1.4, 1.8],
         backgroundColor: 'rgba(37,99,235,0.7)',
         borderRadius: 4
       },
       {
-        label: 'Sub-IG Spread Widening (bps)',
-        data: [20, 60, 150, 275],
+        label: 'HY Spreads (pp)',
+        data: [3.46, 3.0, 4.25, 5.0, 6.0],
         backgroundColor: 'rgba(220,38,38,0.7)',
         borderRadius: 4
       }
@@ -983,32 +1326,38 @@ new Chart(document.getElementById('creditSpreadChart'), {
     responsive: true, maintainAspectRatio: false,
     plugins: {
       legend: { position: 'top' },
-      tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: +${ctx.raw}bps` } }
+      tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw + 'pp'; } } }
     },
     scales: {
-      y: { title: { display: true, text: 'Spread Widening (bps)' }, grid: { color: '#F3F4F6' } },
+      y: { title: { display: true, text: 'Credit Spread (percentage points)' }, grid: { color: '#F3F4F6' } },
       x: { grid: { display: false } }
     }
   }
 });
 
-// 3) Brent Vol Term Structure
+// 3) Brent Vol Term Structure (Updated)
 new Chart(document.getElementById('volTermChart'), {
   type: 'line',
   data: {
     labels: ['30-day', '60-day', '90-day', '180-day'],
     datasets: [
       {
+        label: 'Current (22 Apr)',
+        data: [52, 46, 42, 38],
+        borderColor: '#EA580C', backgroundColor: 'rgba(234,88,12,0.1)',
+        borderWidth: 2.5, tension: 0.3, fill: true, pointRadius: 5
+      },
+      {
         label: 'Post-conflict (8 Mar)',
         data: [68, 48, 38, 32],
-        borderColor: '#DC2626', backgroundColor: 'rgba(220,38,38,0.1)',
-        borderWidth: 2.5, tension: 0.3, fill: true, pointRadius: 5
+        borderColor: '#DC2626', backgroundColor: 'rgba(220,38,38,0.05)',
+        borderWidth: 2, tension: 0.3, fill: false, pointRadius: 4, borderDash: [4,4]
       },
       {
         label: 'Pre-conflict (27 Feb)',
         data: [28, 27, 26, 25],
         borderColor: '#6B7280', backgroundColor: 'rgba(107,114,128,0.05)',
-        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 5, borderDash: [5,5]
+        borderWidth: 2, tension: 0.3, fill: false, pointRadius: 4, borderDash: [6,6]
       }
     ]
   },
@@ -1022,16 +1371,16 @@ new Chart(document.getElementById('volTermChart'), {
   }
 });
 
-// 4) Mortgage Stress Chart
+// 4) Mortgage Stress Chart (Updated with actual rate path)
 new Chart(document.getElementById('mortgageStressChart'), {
   type: 'bar',
   data: {
-    labels: ['Current\n(Dec 2025)', 'Sc A:\nRate hold', 'Sc B:\n+25bp (May)', 'Sc C:\n+50bp', 'Sc D:\n+25bp then cut?'],
+    labels: ['Dec 2025\n(3.60%)', 'Feb 2026\n(3.85%)', 'Mar 2026\n(4.10%)', 'Apr 2026\n(4.10% held)', 'Sc B: Hold\n(4.10%)', 'Sc C: +25bp\n(4.35%)'],
     datasets: [{
       label: 'Mortgage holders "at risk" (%)',
-      data: [24.5, 25.0, 27.2, 30.5, 32],
-      backgroundColor: ['#93C5FD','#A7F3D0','#FCD34D','#FDBA74','#FCA5A5'],
-      borderColor: ['#2563EB','#059669','#F59E0B','#EA580C','#DC2626'],
+      data: [24.5, 25.5, 27.2, 27.2, 28.5, 31.0],
+      backgroundColor: ['#93C5FD','#A7F3D0','#FCD34D','#FCD34D','#FDBA74','#FCA5A5'],
+      borderColor: ['#2563EB','#059669','#F59E0B','#F59E0B','#EA580C','#DC2626'],
       borderWidth: 2, borderRadius: 6
     }]
   },
@@ -1039,16 +1388,16 @@ new Chart(document.getElementById('mortgageStressChart'), {
     responsive: true, maintainAspectRatio: false,
     plugins: {
       legend: { display: false },
-      tooltip: { callbacks: { label: ctx => `${ctx.raw}% of mortgage holders at risk` } }
+      tooltip: { callbacks: { label: function(ctx) { return ctx.raw + '% of mortgage holders at risk'; } } }
     },
     scales: {
-      y: { title: { display: true, text: '% of Mortgage Holders "At Risk"' }, min: 20, grid: { color: '#F3F4F6' } },
+      y: { title: { display: true, text: '% of Mortgage Holders "At Risk"' }, min: 20, max: 34, grid: { color: '#F3F4F6' } },
       x: { grid: { display: false } }
     }
   }
 });
 
-// 5) Super fund allocation (illustrative balanced fund)
+// 5) Super fund allocation (illustrative balanced fund - same as original)
 new Chart(document.getElementById('superAllocationChart'), {
   type: 'doughnut',
   data: {
@@ -1065,12 +1414,39 @@ new Chart(document.getElementById('superAllocationChart'), {
     responsive: true, maintainAspectRatio: false,
     plugins: {
       legend: { position: 'right', labels: { font: { size: 12 }, padding: 12 } },
-      tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.raw}%` } }
+      tooltip: { callbacks: { label: function(ctx) { return ctx.label + ': ' + ctx.raw + '%'; } } }
     }
   }
 });
 
-// 6) Private Markets Stress (stacked bar showing pre-existing + conflict-driven stress)
+// 6) Private Credit Industry-Wide Redemptions (NEW)
+new Chart(document.getElementById('privateRedemptionChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Blackstone\nBCRED', 'Apollo', 'Ares', 'Blue Owl'],
+    datasets: [{
+      label: 'Q1 2026 Redemption Requests (% of NAV)',
+      data: [8.0, 11.2, 11.6, 21.9],
+      backgroundColor: ['rgba(37,99,235,0.7)', 'rgba(234,88,12,0.7)', 'rgba(220,38,38,0.7)', 'rgba(127,29,29,0.85)'],
+      borderColor: ['#2563EB', '#EA580C', '#DC2626', '#7F1D1D'],
+      borderWidth: 2,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: function(ctx) { return ctx.raw + '% of NAV in redemption requests'; } } }
+    },
+    scales: {
+      y: { title: { display: true, text: 'Redemption Requests (% of NAV)' }, min: 0, max: 25, grid: { color: '#F3F4F6' } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// 7) Private Markets Stress (Updated with higher values)
 new Chart(document.getElementById('privateMarketsChart'), {
   type: 'bar',
   data: {
@@ -1078,13 +1454,13 @@ new Chart(document.getElementById('privateMarketsChart'), {
     datasets: [
       {
         label: 'Pre-existing stress (pre-conflict)',
-        data: [6, 3, 5, 4, 4, 5],
+        data: [7, 4, 5, 5, 4, 5],
         backgroundColor: 'rgba(124,58,237,0.6)',
         borderRadius: 4
       },
       {
-        label: 'Conflict-driven amplification (Scenario B)',
-        data: [3, 4, 2, 3, 2, 2],
+        label: 'Conflict-driven amplification (actual B/C)',
+        data: [3, 4, 3, 3, 3, 3],
         backgroundColor: 'rgba(220,38,38,0.6)',
         borderRadius: 4
       }
@@ -1094,32 +1470,32 @@ new Chart(document.getElementById('privateMarketsChart'), {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { position: 'top' } },
     scales: {
-      y: { stacked: true, max: 10, title: { display: true, text: 'Risk Severity (1–10)' }, grid: { color: '#F3F4F6' } },
+      y: { stacked: true, max: 10, title: { display: true, text: 'Risk Severity (1-10)' }, grid: { color: '#F3F4F6' } },
       x: { stacked: true, grid: { display: false } }
     }
   }
 });
 
-// 7) Feedback Loops diagram (horizontal bar)
+// 8) Feedback Loops (Updated with actual severity)
 new Chart(document.getElementById('feedbackChart'), {
   type: 'bar',
   data: {
     labels: [
-      'Loop 1: RBA → Consumer Credit → RMBS',
-      'Loop 2: Private Mkts → Super → Liquidity',
-      'Loop 3: Derivatives → Margin → Liquidity',
-      'Loop 4: Insurance → Trade → Real Economy'
+      'Loop 1: RBA > Consumer Credit > RMBS',
+      'Loop 2: Private Mkts > Super > Liquidity',
+      'Loop 3: Derivatives > Margin > Liquidity',
+      'Loop 4: Insurance > Trade > Real Economy'
     ],
     datasets: [
       {
-        label: 'Scenario B severity',
-        data: [5, 3, 4, 5],
-        backgroundColor: 'rgba(37,99,235,0.7)',
+        label: 'Current severity (Scenario B/C actual)',
+        data: [4, 5, 3, 7],
+        backgroundColor: 'rgba(234,88,12,0.7)',
         borderRadius: 4
       },
       {
-        label: 'Scenario C/D severity',
-        data: [9, 7, 8, 8],
+        label: 'Projected severity (Scenario C/D)',
+        data: [8, 8, 8, 9],
         backgroundColor: 'rgba(220,38,38,0.7)',
         borderRadius: 4
       }
@@ -1130,7 +1506,7 @@ new Chart(document.getElementById('feedbackChart'), {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { position: 'top' } },
     scales: {
-      x: { max: 10, title: { display: true, text: 'Severity (1–10)' }, grid: { color: '#F3F4F6' } },
+      x: { max: 10, title: { display: true, text: 'Severity (1-10)' }, grid: { color: '#F3F4F6' } },
       y: { grid: { display: false } }
     }
   }
